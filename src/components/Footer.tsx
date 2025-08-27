@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
               <span className="text-xl font-bold">COLLAB</span>
             </motion.div>
-            <motion.p
+            <motion.div
               className="text-gray-400 mb-4 max-w-md"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export default function Footer() {
             >
               <p className='mb-2'>The ultimate real-time collaborative jamming web application for musicians who want to jam together online, perfect for virtual music brainstorming and fun jamming sessions.</p>
               <p className="text-amber-400">🚧 Currently in POC phase. Expect bugs and performance issues.</p>
-            </motion.p>
+            </motion.div>
           </div>
 
           <motion.div
