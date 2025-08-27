@@ -1,7 +1,7 @@
 {
   "name": "COLLAB - Jam Band",
   "short_name": "COLLAB",
-  "description": "Real-time collaborative jamming web application",
+  "description": "Real-time collaborative jamming web application with virtual instruments, ultra-low latency voice chat, and synchronized metronome.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#667eea",
@@ -18,7 +18,7 @@
       "purpose": "any"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/apple-icon",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
@@ -30,24 +30,10 @@
       "purpose": "any"
     },
     {
-      "src": "/favicon-32x32.png",
+      "src": "/icon",
       "sizes": "32x32",
       "type": "image/png",
       "purpose": "any"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/images/app-overview.webp",
-      "sizes": "1280x720",
-      "type": "image/webp",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/images/mobile-view.webp",
-      "sizes": "390x844",
-      "type": "image/webp",
-      "form_factor": "narrow"
     }
   ],
   "shortcuts": [
@@ -58,8 +44,8 @@
       "url": "/?action=jam",
       "icons": [
         {
-          "src": "/favicon.svg",
-          "sizes": "96x96"
+          "src": "/icon",
+          "sizes": "32x32"
         }
       ]
     }

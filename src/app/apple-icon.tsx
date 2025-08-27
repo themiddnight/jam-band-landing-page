@@ -1,13 +1,13 @@
 import { ImageResponse } from '@vercel/og'
 
-export const alt = 'COLLAB - Jam Band | Real-time Collaborative Jamming'
 export const size = {
-  width: 1200,
-  height: 630,
+  width: 180,
+  height: 180,
 }
+
 export const contentType = 'image/png'
 
-export default async function Image() {
+export default function AppleIcon() {
   return new ImageResponse(
     (
       <div
@@ -16,33 +16,20 @@ export default async function Image() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '40px',
+          borderRadius: '20px',
         }}
       >
         <div
           style={{
-            fontSize: 120,
+            fontSize: 80,
             fontWeight: 'bold',
             color: 'white',
-            textAlign: 'center',
-            marginBottom: '20px',
+            fontFamily: 'system-ui',
           }}
         >
-          collab
-        </div>
-        
-        <div
-          style={{
-            fontSize: 36,
-            color: 'white',
-            textAlign: 'center',
-            fontWeight: '500',
-          }}
-        >
-          Music In Your Hands
+          C
         </div>
       </div>
     ),

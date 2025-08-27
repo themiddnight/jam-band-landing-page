@@ -5,8 +5,18 @@ import Image from 'next/image';
 
 export default function HeroSection() {
   return (
-    <section id="how-it-works" className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20">
-      <div className="max-w-7xl mx-auto">
+    <section id="how-it-works" className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20 overflow-hidden">
+      {/* Background Image Effect */}
+      <div className="absolute inset-0" style={{ opacity: 0.1 }}>
+        <Image 
+          src="/assets/images/app-overview.webp" 
+          alt="" 
+          fill
+          className="object-cover transform scale-150 -translate-x-20 -translate-y-20 blur-md"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Hero Content */}
           <motion.div 
@@ -67,13 +77,13 @@ export default function HeroSection() {
               />
             </div>
             {/* Large background image for depth */}
-            <div className="absolute inset-0 -z-10 opacity-10 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden" style={{ opacity: 0.15 }}>
               <Image 
                 src="/assets/images/app-overview.webp" 
                 alt="" 
                 width={800}
                 height={600}
-                className="w-[140%] h-[140%] object-cover transform scale-150 -translate-x-10 -translate-y-10 blur-xs"
+                className="w-[140%] h-[140%] object-cover transform scale-150 -translate-x-10 -translate-y-10 blur-md"
               />
             </div>
           </motion.div>

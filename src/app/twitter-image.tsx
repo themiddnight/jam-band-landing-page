@@ -1,7 +1,5 @@
 import { ImageResponse } from '@vercel/og'
 
-export const dynamic = 'force-static'
-
 export const alt = 'COLLAB - Jam Band | Real-time Collaborative Jamming'
 export const size = {
   width: 1200,

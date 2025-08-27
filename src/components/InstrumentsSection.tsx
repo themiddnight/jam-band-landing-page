@@ -5,8 +5,18 @@ import Image from 'next/image';
 
 export default function InstrumentsSection() {
   return (
-    <section id="instruments" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20">
-      <div className="max-w-7xl mx-auto">
+    <section id="instruments" className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20 overflow-hidden">
+      {/* Background Image Effect */}
+      <div className="absolute inset-0" style={{ opacity: 0.1 }}>
+        <Image 
+          src="/assets/images/various-instruments-selection.webp" 
+          alt="" 
+          fill
+          className="object-cover transform scale-150 -translate-x-16 -translate-y-16 blur-md"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.h2 
           className="text-3xl sm:text-4xl font-bold text-center mb-16"
           initial={{ opacity: 0, y: 30 }}

@@ -1,24 +1,8 @@
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://jam-band-fe.vercel.app/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Disallow admin or private areas (if any)
-Disallow: /api/
-Disallow: /_next/
+Disallow: /private/
 Disallow: /admin/
 
-# Allow important pages
-Allow: /
-Allow: /demo
-Allow: /opengraph-image
-Allow: /twitter-image
-
-# Block common bot patterns
 User-agent: GPTBot
 Disallow: /
 
@@ -29,4 +13,9 @@ User-agent: CCBot
 Disallow: /
 
 User-agent: anthropic-ai
-Disallow: / 
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+Sitemap: https://jam-band-fe.vercel.app/sitemap.xml 

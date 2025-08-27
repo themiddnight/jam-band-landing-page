@@ -36,8 +36,18 @@ const detailCards = [
 
 export default function DetailSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-900/20 dark:to-indigo-900/20">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-900/20 dark:to-indigo-900/20 overflow-hidden">
+      {/* Background Image Effect */}
+      <div className="absolute inset-0" style={{ opacity: 0.1 }}>
+        <Image 
+          src="/assets/images/synth-sequencer.webp" 
+          alt="" 
+          fill
+          className="object-cover transform scale-150 -translate-x-24 -translate-y-24 blur-md"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"

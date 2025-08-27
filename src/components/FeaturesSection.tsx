@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+// import Image from 'next/image';
 
 const features = [
   {
@@ -37,8 +38,18 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50 dark:from-gray-800 dark:via-purple-900/20 dark:to-blue-900/20">
-      <div className="max-w-7xl mx-auto">
+    <section id="features" className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50 dark:from-gray-800 dark:via-purple-900/20 dark:to-blue-900/20 overflow-hidden bg-image-overlay">
+      {/* Background Image Effect */}
+      {/* <div className="absolute inset-0" style={{ opacity: 0.15 }}>
+        <Image 
+          src="/assets/images/app-overview.webp" 
+          alt="" 
+          fill
+          className="object-cover transform scale-150 -translate-x-20 -translate-y-20 blur-md"
+        />
+      </div> */}
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.h2 
           className="text-3xl sm:text-4xl font-bold text-center mb-16"
           initial={{ opacity: 0, y: 30 }}

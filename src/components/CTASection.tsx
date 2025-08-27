@@ -1,11 +1,22 @@
 'use client';
 
 import { motion } from 'framer-motion';
+// import Image from 'next/image';
 
 export default function CTASection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-blue-600">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-blue-600 overflow-hidden">
+      {/* Background Image Effect */}
+      {/* <div className="absolute inset-0" style={{ opacity: 0.2 }}>
+        <Image 
+          src="/assets/images/scale-pre-setup.webp" 
+          alt="" 
+          fill
+          className="object-cover transform scale-150 -translate-x-20 -translate-y-20 blur-md"
+        />
+      </div> */}
+      
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.h2 
           className="text-3xl sm:text-4xl font-bold text-white mb-6"
           initial={{ opacity: 0, y: 30 }}
