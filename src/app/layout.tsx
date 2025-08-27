@@ -10,7 +10,7 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jam-band-fe.vercel.app'),
+  metadataBase: new URL('https://jam-band-landing-page.vercel.app'),
   title: "COLLAB - Jam Band | Real-time Collaborative Jamming",
   description: "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome. Perfect for remote jam sessions and virtual music brainstorming.",
   keywords: "music collaboration, virtual instruments, real-time music, jam session, online music, web audio, virtual jamming, music production, collaborative music, remote music, digital audio workstation, DAW, music software, online collaboration, music technology, web-based music, browser music, real-time audio, music streaming, virtual band, online rehearsal, music education, music learning, interactive music, social music, creative collaboration, music innovation, cross-platform music, accessible music, inclusive music, music democratization",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "COLLAB - Jam Band | Real-time Collaborative Jamming",
     description: "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome. Perfect for remote jam sessions and virtual music brainstorming.",
     type: "website",
-    url: "https://jam-band-fe.vercel.app/",
+    url: "https://jam-band-landing-page.vercel.app/",
     siteName: "COLLAB - Jam Band",
     locale: "en_US",
     images: [
@@ -80,9 +80,9 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://jam-band-fe.vercel.app/",
+    canonical: "https://jam-band-landing-page.vercel.app/",
     languages: {
-      "en-US": "https://jam-band-fe.vercel.app/",
+      "en-US": "https://jam-band-landing-page.vercel.app/",
     },
   },
   manifest: "/manifest.json",
