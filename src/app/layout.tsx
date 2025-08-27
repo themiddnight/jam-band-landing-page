@@ -38,11 +38,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/opengraph-image.webp",
         width: 1200,
         height: 630,
         alt: "COLLAB - Jam Band | Real-time Collaborative Jamming",
-        type: "image/png",
+        type: "image/webp",
       },
     ],
   },
@@ -50,18 +50,18 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "COLLAB - Jam Band | Real-time Collaborative Jamming",
     description: "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome.",
-    images: ["/twitter-image"],
+    images: ["/twitter-image.webp"],
     creator: "@jam_band",
     site: "@jam_band",
   },
   icons: {
     icon: [
-      { url: "/icon", sizes: "32x32", type: "image/png" },
+      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "any" },
     ],
     apple: [
-      { url: "/apple-icon", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
   },
