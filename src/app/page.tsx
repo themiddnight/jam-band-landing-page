@@ -8,6 +8,7 @@ import {
   InstrumentsSection,
   UseCasesSection,
   DetailSection,
+  TechnicalRequirementsSection,
   CTASection,
   Footer
 } from '@/components';
@@ -126,6 +127,7 @@ export default function HomePage() {
       <InstrumentsSection />
       <UseCasesSection />
       <DetailSection />
+      <TechnicalRequirementsSection />
       <CTASection />
       <Footer />
     </div>

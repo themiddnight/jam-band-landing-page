@@ -4,6 +4,7 @@ export { default as FeaturesSection } from './FeaturesSection';
 export { default as InstrumentsSection } from './InstrumentsSection';
 export { default as UseCasesSection } from './UseCasesSection';
 export { default as DetailSection } from './DetailSection';
+export { default as TechnicalRequirementsSection } from './TechnicalRequirementsSection';
 export { default as CTASection } from './CTASection';
 export { default as Footer } from './Footer';
 export { default as ThemeToggle } from './ThemeToggle';

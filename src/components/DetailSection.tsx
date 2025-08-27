@@ -27,9 +27,9 @@ const detailCards = [
   },
   {
     title: 'Step Sequencer',
-    description: '16-step grid with pattern creation and real-time editing for complex musical arrangements.',
+    description: '1-32 variable step grid with pattern creation and real-time editing for complex musical arrangements.',
     image: '/assets/images/sequencer.webp',
-    tags: ['16 Steps', 'Grid'],
+    tags: ['Variable Steps', 'Grid'],
     gradient: 'from-indigo-500/10 to-purple-500/10'
   }
 ];

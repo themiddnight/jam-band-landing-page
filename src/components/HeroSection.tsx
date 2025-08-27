@@ -34,11 +34,11 @@ export default function HeroSection() {
             
             {/* Demo Banner */}
             <div className="mb-6 inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 border border-amber-200 dark:border-amber-700 rounded-full">
-              <span className="text-amber-800 dark:text-amber-200 text-sm font-medium">🚧 Demo Version - Currently in Development</span>
+              <span className="text-amber-800 dark:text-amber-200 text-sm font-medium">🚧 POC Version - Expect bugs and performance issues</span>
             </div>
             
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-              COLLAB - Jam Band is the ultimate real-time collaborative jamming web application. 
+              COLLAB - Jam Band is the real-time collaborative jamming web application. 
               Jam with friends anywhere in the world with virtual instruments and ultra-low latency voice chat for music performance.
             </p>
             
@@ -47,16 +47,16 @@ export default function HeroSection() {
                 href="https://jam-band-fe.vercel.app/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg music-btn"
+                className="bg-gradient-to-r from-amber-500 to-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:from-amber-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 shadow-lg music-btn"
               >
                 🎵 Start Jamming Now
               </a>
-              <a 
+              {/* <a 
                 href="/demo" 
                 className="border-2 border-purple-600 text-purple-600 dark:text-purple-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-600 hover:text-white transition-all duration-300"
               >
                 🎬 Watch Demo
-              </a>
+              </a> */}
             </div>
           </motion.div>
           

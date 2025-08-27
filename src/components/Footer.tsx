@@ -1,15 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github } from 'lucide-react';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <motion.div 
+            <motion.div
               className="flex items-center space-x-2 mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -21,33 +22,16 @@ export default function Footer() {
               </div>
               <span className="text-xl font-bold">COLLAB</span>
             </motion.div>
-            <motion.p 
+            <motion.p
               className="text-gray-400 mb-4 max-w-md"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              The ultimate real-time collaborative jamming web application for musicians who want to jam together online, perfect for virtual music brainstorming and fun jamming sessions. 
-              <span className="text-amber-400">🚧 Currently in demo phase.</span>
+              <p className='mb-2'>The ultimate real-time collaborative jamming web application for musicians who want to jam together online, perfect for virtual music brainstorming and fun jamming sessions.</p>
+              <p className="text-amber-400">🚧 Currently in POC phase. Expect bugs and performance issues.</p>
             </motion.p>
-            <motion.div 
-              className="flex space-x-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <a 
-                href="https://github.com/themiddnight/jam-band-fe" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-            </motion.div>
           </div>
 
           <motion.div
@@ -93,14 +77,14 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p>&copy; 2024 COLLAB - Jam Band. Built with ❤️ for musicians everywhere.</p>
+          <p>&copy; {currentYear} COLLAB - <a href="https://themiddnight-resume.vercel.app/resumes/themiddnight-dev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Pathompong Thitithan</a>. Built with ❤️ for musicians everywhere.</p>
         </motion.div>
       </div>
     </footer>

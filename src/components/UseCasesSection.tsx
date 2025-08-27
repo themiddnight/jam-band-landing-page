@@ -5,14 +5,9 @@ import { motion } from 'framer-motion';
 
 const useCases = [
   {
-    icon: '🎵',
-    title: 'Music Learners',
-    description: 'Built-in scales, chords, and theory helpers for skill development'
-  },
-  {
-    icon: '🎸',
-    title: 'Musicians',
-    description: 'Virtual instruments with music theory assistance for all skill levels'
+    icon: '🌍',
+    title: 'Remote Collaboration',
+    description: 'Jam with friends anywhere in the world with minimal latency'
   },
   {
     icon: '🎛️',
@@ -20,10 +15,15 @@ const useCases = [
     description: 'Brainstorm ideas, experiment with synthesizers, create patterns for jamming'
   },
   {
-    icon: '🌍',
-    title: 'Remote Collaboration',
-    description: 'Jam with friends anywhere in the world with minimal latency'
-  }
+    icon: '🎸',
+    title: 'Musicians',
+    description: 'Virtual instruments with music theory assistance for all skill levels'
+  },
+  {
+    icon: '🎵',
+    title: 'Music Learners',
+    description: 'Built-in scales, chords, and theory helpers for skill development'
+  },
 ];
 
 export default function UseCasesSection() {

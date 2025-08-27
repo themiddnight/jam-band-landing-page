@@ -12,7 +12,7 @@ const features = [
   {
     icon: '🎤',
     title: 'Ultra-Low Latency Voice',
-    description: 'Voice chat prioritized for low latency over quality, perfect for singing and physical instrument input during jamming.'
+    description: 'Voice chat prioritized for low latency over quality, perfect for singing and physical instrument input during jamming. Performance depends on browser and network.'
   },
   {
     icon: '🥁',
@@ -27,7 +27,7 @@ const features = [
   {
     icon: '🎹',
     title: 'MIDI Controller Support',
-    description: 'Use your external MIDI devices and physical instruments for enhanced jamming experience.'
+    description: 'Use your external MIDI devices and physical instruments for enhanced jamming experience. Best supported in Chromium-based browsers.'
   },
   {
     icon: '📱',
@@ -64,7 +64,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 dark:border-purple-800 feature-card"
+              className="bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-purple-100 dark:border-purple-800 feature-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}

@@ -10,5 +10,9 @@ export const NAVIGATION_MENU_ITEMS = [
   {
     label: 'Perfect For',
     href: '#perfect-for'
+  },
+  {
+    label: 'Technical Requirements',
+    href: '#technical-requirements'
   }
 ] as const; 

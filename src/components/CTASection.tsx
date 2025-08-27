@@ -46,7 +46,7 @@ export default function CTASection() {
             href="https://jam-band-fe.vercel.app/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 music-btn"
+            className="bg-gradient-to-r from-amber-500 to-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:from-amber-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 music-btn"
           >
             🎵 Start Jamming Now
           </a>
