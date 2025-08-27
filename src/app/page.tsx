@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Script from 'next/script';
 import {
   Navigation,
   HeroSection,
@@ -35,13 +36,16 @@ export default function HomePage() {
   }, [mobileMenuOpen]);
 
   // Structured Data for SEO
-  useEffect(() => {
-    const structuredData = {
-      "@context": "https://schema.org",
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "COLLAB - Jam Band - Landing Page",
+    "description": "Landing page for COLLAB - Jam Band, a real-time collaborative jamming web application with virtual instruments, ultra-low latency voice chat, and synchronized metronome.",
+    "url": "https://jam-band-landing-page.vercel.app/",
+    "mainEntity": {
       "@type": "WebApplication",
       "name": "COLLAB - Jam Band",
       "description": "Real-time collaborative jamming web application with virtual instruments, ultra-low latency voice chat, and synchronized metronome.",
-      "url": "https://jam-band-fe.vercel.app/",
       "applicationCategory": "MusicApplication",
       "operatingSystem": "Web Browser",
       "browserRequirements": "Requires JavaScript. Requires HTML5.",
@@ -52,16 +56,16 @@ export default function HomePage() {
         "availability": "https://schema.org/InStock"
       },
       "author": {
-        "@type": "Organization",
-        "name": "COLLAB Team"
+        "@type": "Person",
+        "name": "Pathompong Thitithan"
       },
       "creator": {
-        "@type": "Organization",
-        "name": "COLLAB Team"
+        "@type": "Person",
+        "name": "Pathompong Thitithan"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "COLLAB"
+        "name": "BONIO House"
       },
       "featureList": [
         "Real-time collaborative jamming",
@@ -71,52 +75,36 @@ export default function HomePage() {
         "Cross-platform compatibility",
         "No installation required"
       ],
-      "screenshot": "https://jam-band-fe.vercel.app/images/app-overview.webp",
+      "screenshot": "https://jam-band-landing-page.vercel.app/assets/images/app-overview.webp",
       "softwareVersion": "1.0.0",
       "datePublished": "2025-08-27",
       "dateModified": "2025-08-27",
       "inLanguage": "en-US",
-      "isAccessibleForFree": true,
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "150",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Music Producer"
-          },
-          "reviewBody": "Amazing tool for remote collaboration. The low latency makes it feel like we're in the same room."
-        }
-      ]
-    };
-
-    // Add structured data to the page
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-
-    // Cleanup function
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    };
-  }, []);
+      "isAccessibleForFree": true
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Pathompong Thitithan"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BONIO House"
+    },
+    "datePublished": "2025-08-27",
+    "dateModified": "2025-08-27",
+    "inLanguage": "en-US"
+  };
 
   return (
     <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      
       <Navigation 
         mobileMenuOpen={mobileMenuOpen}
         onMobileMenuToggle={toggleMobileMenu}
