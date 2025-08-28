@@ -53,16 +53,28 @@ async function detectLocation(req: NextRequest) {
     // Fallback: Use IP geolocation service
     const ip = getClientIP(req);
     if (ip && ip !== 'unknown') {
-      const response = await fetch(`http://ip-api.com/json/${ip}`);
-      const data = await response.json();
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
       
-      if (data.status === 'success') {
-        return {
-          country: data.country,
-          city: data.city,
-          region: data.regionName,
-          timezone: data.timezone,
-        };
+      try {
+        const response = await fetch(`https://ip-api.com/json/${ip}`, {
+          signal: controller.signal,
+        });
+        clearTimeout(timeoutId);
+        
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+          return {
+            country: data.country,
+            city: data.city,
+            region: data.regionName,
+            timezone: data.timezone,
+          };
+        }
+      } catch (fetchError) {
+        clearTimeout(timeoutId);
+        console.error('IP geolocation fetch error:', fetchError);
       }
     }
     
@@ -75,9 +87,14 @@ async function detectLocation(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
+    console.log('=== Starting feedback submission ===');
+    
     // Rate limiting
     const clientIP = getClientIP(req);
+    console.log('Client IP:', clientIP);
+    
     if (isRateLimited(clientIP)) {
+      console.log('Rate limited');
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
         { status: 429 }
@@ -85,10 +102,12 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
+    console.log('Received feedback data:', body);
     
     // Validate input
     const validationResult = feedbackFormSchema.safeParse(body);
     if (!validationResult.success) {
+      console.log('Validation failed:', validationResult.error.issues);
       return NextResponse.json(
         { error: 'Invalid input', details: validationResult.error.issues },
         { status: 400 }
@@ -96,11 +115,29 @@ export async function POST(req: NextRequest) {
     }
 
     const { usagePurposes, category, experienceLevel, rating, message } = validationResult.data;
+    console.log('Validated data:', { usagePurposes, category, experienceLevel, rating, message });
     
     // Detect location
+    console.log('Detecting location...');
     const location = await detectLocation(req);
+    console.log('Detected location:', location);
     
     // Store in database
+    console.log('Attempting to create feedback in database...');
+    console.log('Data to insert:', {
+      usagePurposes,
+      category,
+      experienceLevel,
+      rating,
+      message: message || '',
+      country: location.country,
+      city: location.city,
+      region: location.region,
+      timezone: location.timezone,
+      userAgent: req.headers.get('user-agent') || null,
+      ipAddress: clientIP,
+    });
+    
     const feedback = await prisma.feedback.create({
       data: {
         usagePurposes: usagePurposes,
@@ -116,6 +153,7 @@ export async function POST(req: NextRequest) {
         ipAddress: clientIP,
       },
     });
+    console.log('Feedback created successfully:', feedback.id);
 
     return NextResponse.json(
       { 
@@ -126,7 +164,16 @@ export async function POST(req: NextRequest) {
     );
     
   } catch (error) {
-    console.error('Error submitting feedback:', error);
+    console.error('=== Error submitting feedback ===');
+    console.error('Error type:', typeof error);
+    console.error('Error message:', error instanceof Error ? error.message : String(error));
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+    
+    if (error instanceof Error) {
+      console.error('Error name:', error.name);
+      console.error('Error cause:', error.cause);
+    }
+    
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
