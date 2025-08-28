@@ -1,18 +1,22 @@
 export const NAVIGATION_MENU_ITEMS = [
   {
     label: 'Features',
-    href: '#features'
+    href: '/#features'
   },
   {
     label: 'Instruments',
-    href: '#instruments'
+    href: '/#instruments'
   },
   {
     label: 'Perfect For',
-    href: '#perfect-for'
+    href: '/#perfect-for'
   },
   {
     label: 'Technical Requirements',
-    href: '#technical-requirements'
+    href: '/#technical-requirements'
+  },
+  {
+    label: 'Feedback',
+    href: '/feedback'
   }
 ] as const; 

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -42,10 +43,10 @@ export default function Footer() {
           >
             <h3 className="text-lg font-semibold mb-4">Features</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#instruments" className="hover:text-white transition-colors">Virtual Instruments</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Voice Chat</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Metronome</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Sequencer</a></li>
+              <li><Link href="/#instruments" className="hover:text-white transition-colors">Virtual Instruments</Link></li>
+              <li><Link href="/#features" className="hover:text-white transition-colors">Voice Chat</Link></li>
+              <li><Link href="/#features" className="hover:text-white transition-colors">Metronome</Link></li>
+              <li><Link href="/#features" className="hover:text-white transition-colors">Sequencer</Link></li>
             </ul>
           </motion.div>
 
@@ -57,9 +58,9 @@ export default function Footer() {
           >
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <li><Link href="/#features" className="hover:text-white transition-colors">Documentation</Link></li>
+              <li><Link href="/#features" className="hover:text-white transition-colors">Help Center</Link></li>
+              <li><Link href="/feedback" className="hover:text-white transition-colors">Feedback</Link></li>
             </ul>
           </motion.div>
 
