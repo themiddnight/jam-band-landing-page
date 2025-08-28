@@ -7,9 +7,7 @@ export const feedbackFormSchema = z.object({
   }),
   category: z.enum(["BUG_REPORT", "FEATURE_REQUEST", "GENERAL_FEEDBACK"]),
   experienceLevel: z.enum(["BEGINNER", "INTERMEDIATE", "ADVANCED"]),
-  rating: z.union([z.undefined(), z.number().min(1).max(5)]).refine((val) => val !== undefined, {
-    message: "Please select a rating"
-  }),
+  rating: z.number().min(1).max(5),
   message: z.string().optional(),
 });
 
