@@ -2,13 +2,32 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { feedbackFormSchema } from '@/lib/validations/feedback';
 
-// Simple in-memory rate limiting (in production, use Redis)
+// Simple in-memory rate limiting (in production, use Redis or Upstash)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
 const RATE_LIMIT = {
   maxRequests: 5,
   windowMs: 15 * 60 * 1000, // 15 minutes
 };
+
+// Clean up old entries to prevent memory leaks
+function cleanupRateLimitMap() {
+  const now = Date.now();
+  for (const [key, value] of rateLimitMap.entries()) {
+    if (now > value.resetTime) {
+      rateLimitMap.delete(key);
+    }
+  }
+}
+
+// Clean up every 30 minutes
+declare global {
+  var rateLimitCleanupInterval: NodeJS.Timeout | undefined;
+}
+
+if (typeof global !== 'undefined' && !global.rateLimitCleanupInterval) {
+  global.rateLimitCleanupInterval = setInterval(cleanupRateLimitMap, 30 * 60 * 1000);
+}
 
 function getClientIP(req: NextRequest): string {
   const forwarded = req.headers.get('x-forwarded-for');
@@ -85,59 +104,50 @@ async function detectLocation(req: NextRequest) {
   }
 }
 
+// Helper function to add security headers
+function addSecurityHeaders(response: NextResponse): NextResponse {
+  response.headers.set('X-Content-Type-Options', 'nosniff');
+  response.headers.set('X-Frame-Options', 'DENY');
+  response.headers.set('X-XSS-Protection', '1; mode=block');
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  return response;
+}
+
 export async function POST(req: NextRequest) {
   try {
-    console.log('=== Starting feedback submission ===');
+    if (process.env.NODE_ENV === 'development') {
+      console.log('=== Starting feedback submission ===');
+    }
     
     // Rate limiting
     const clientIP = getClientIP(req);
-    console.log('Client IP:', clientIP);
     
     if (isRateLimited(clientIP)) {
-      console.log('Rate limited');
-      return NextResponse.json(
+      console.warn('Rate limit exceeded for IP:', clientIP);
+      return addSecurityHeaders(NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
         { status: 429 }
-      );
+      ));
     }
 
     const body = await req.json();
-    console.log('Received feedback data:', body);
     
     // Validate input
     const validationResult = feedbackFormSchema.safeParse(body);
     if (!validationResult.success) {
-      console.log('Validation failed:', validationResult.error.issues);
-      return NextResponse.json(
+      console.warn('Validation failed:', validationResult.error.issues);
+      return addSecurityHeaders(NextResponse.json(
         { error: 'Invalid input', details: validationResult.error.issues },
         { status: 400 }
-      );
+      ));
     }
 
     const { usagePurposes, category, experienceLevel, rating, message } = validationResult.data;
-    console.log('Validated data:', { usagePurposes, category, experienceLevel, rating, message });
     
     // Detect location
-    console.log('Detecting location...');
     const location = await detectLocation(req);
-    console.log('Detected location:', location);
     
     // Store in database
-    console.log('Attempting to create feedback in database...');
-    console.log('Data to insert:', {
-      usagePurposes,
-      category,
-      experienceLevel,
-      rating,
-      message: message || '',
-      country: location.country,
-      city: location.city,
-      region: location.region,
-      timezone: location.timezone,
-      userAgent: req.headers.get('user-agent') || null,
-      ipAddress: clientIP,
-    });
-    
     const feedback = await prisma.feedback.create({
       data: {
         usagePurposes: usagePurposes,
@@ -153,30 +163,65 @@ export async function POST(req: NextRequest) {
         ipAddress: clientIP,
       },
     });
-    console.log('Feedback created successfully:', feedback.id);
+    
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Feedback created successfully:', feedback.id);
+    }
 
-    return NextResponse.json(
+    return addSecurityHeaders(NextResponse.json(
       { 
         message: 'Feedback submitted successfully!',
         id: feedback.id 
       },
-      { status: 201 }
-    );
+      { 
+        status: 201,
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      }
+    ));
     
   } catch (error) {
     console.error('=== Error submitting feedback ===');
     console.error('Error type:', typeof error);
     console.error('Error message:', error instanceof Error ? error.message : String(error));
-    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
     
-    if (error instanceof Error) {
-      console.error('Error name:', error.name);
-      console.error('Error cause:', error.cause);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+      
+      if (error instanceof Error) {
+        console.error('Error name:', error.name);
+        console.error('Error cause:', error.cause);
+      }
     }
     
-    return NextResponse.json(
+    return addSecurityHeaders(NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
-    );
+    ));
   }
+}
+
+// Handle unsupported HTTP methods
+export async function GET() {
+  return addSecurityHeaders(NextResponse.json(
+    { error: 'Method not allowed' },
+    { status: 405, headers: { Allow: 'POST' } }
+  ));
+}
+
+export async function PUT() {
+  return addSecurityHeaders(NextResponse.json(
+    { error: 'Method not allowed' },
+    { status: 405, headers: { Allow: 'POST' } }
+  ));
+}
+
+export async function DELETE() {
+  return addSecurityHeaders(NextResponse.json(
+    { error: 'Method not allowed' },
+    { status: 405, headers: { Allow: 'POST' } }
+  ));
 } 
