@@ -47,7 +47,7 @@ export default function TechnicalRequirementsSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-            Technical Requirements & Notes
+            *Technical Requirements & Notes
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Important information to help you get the best jamming experience. These details ensure smooth performance and set realistic expectations.

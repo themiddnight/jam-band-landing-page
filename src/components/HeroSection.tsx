@@ -39,7 +39,7 @@ export default function HeroSection() {
             
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
               COLLAB - Jam Band is the real-time collaborative jamming web application. 
-              Jam with friends anywhere in the world with virtual instruments and ultra-low latency voice chat for music performance.
+              Jam with friends anywhere in the world<a href="#technical-requirements" className="text-amber-500">*</a> with virtual instruments and ultra-low latency voice chat for music performance.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

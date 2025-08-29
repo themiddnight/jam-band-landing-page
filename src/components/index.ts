@@ -1,4 +1,5 @@
 export { default as Navigation } from './Navigation';
+export { default as NavigationWrapper } from './NavigationWrapper';
 export { default as HeroSection } from './HeroSection';
 export { default as FeaturesSection } from './FeaturesSection';
 export { default as InstrumentsSection } from './InstrumentsSection';

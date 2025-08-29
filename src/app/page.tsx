@@ -1,9 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Script from 'next/script';
 import {
-  Navigation,
   HeroSection,
   FeaturesSection,
   InstrumentsSection,
@@ -11,30 +9,9 @@ import {
   DetailSection,
   TechnicalRequirementsSection,
   CTASection,
-  Footer
 } from '@/components';
 
 export default function HomePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
-    // Cleanup function to restore scroll when component unmounts
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [mobileMenuOpen]);
-
   // Structured Data for SEO
   const structuredData = {
     "@context": "https://schema.org",
@@ -105,11 +82,6 @@ export default function HomePage() {
         }}
       />
       
-      <Navigation 
-        mobileMenuOpen={mobileMenuOpen}
-        onMobileMenuToggle={toggleMobileMenu}
-      />
-      
       <HeroSection />
       <FeaturesSection />
       <InstrumentsSection />
@@ -117,7 +89,6 @@ export default function HomePage() {
       <DetailSection />
       <TechnicalRequirementsSection />
       <CTASection />
-      <Footer />
     </div>
   );
 }

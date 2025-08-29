@@ -1,25 +1,12 @@
 'use client';
 
 import FeedbackForm from '@/components/FeedbackForm';
-import { Navigation } from '@/components';
-import { useState } from 'react';
 
 export default function FeedbackPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
   return (
-    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-      <Navigation 
-        mobileMenuOpen={mobileMenuOpen} 
-        onMobileMenuToggle={toggleMobileMenu} 
-      />
-      
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 flex-grow">
       <main className="pt-16">
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 py-12">
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900 py-12">
           <div className="container mx-auto px-4">
             {/* Mobile/Tablet Layout - Centered */}
             <div className="lg:hidden text-center mb-12">

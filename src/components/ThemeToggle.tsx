@@ -1,30 +1,17 @@
 'use client';
 
-import { Sun, Moon, Monitor, ChevronDown } from 'lucide-react';
+import { Sun, Moon, Monitor } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
+import DropdownMenu, { DropdownItem } from './DropdownMenu';
 
 export default function ThemeToggle() {
   const { theme, setTheme, mounted } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleThemeChange = (newTheme: 'light' | 'dark' | 'system') => {
     setTheme(newTheme);
-    setIsOpen(false);
   };
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   // Don't render anything until mounted to prevent hydration mismatch
   if (!mounted) {
@@ -36,62 +23,54 @@ export default function ThemeToggle() {
   const getThemeIcon = () => {
     switch (theme) {
       case 'light':
-        return <Sun className="w-4 h-4" />;
+        return <Sun className="w-4 h-4 text-gray-900 dark:text-gray-100" />;
       case 'dark':
-        return <Moon className="w-4 h-4" />;
+        return <Moon className="w-4 h-4 text-gray-900 dark:text-gray-100" />;
       case 'system':
-        return <Monitor className="w-4 h-4" />;
+        return <Monitor className="w-4 h-4 text-gray-900 dark:text-gray-100" />;
       default:
-        return <Monitor className="w-4 h-4" />;
+        return <Monitor className="w-4 h-4 text-gray-900 dark:text-gray-100" />;
     }
   };
 
-  return (
-    <div className="relative" ref={dropdownRef}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
-        aria-expanded={isOpen}
-        aria-haspopup="true"
-      >
-        {getThemeIcon()}
-        <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-      </button>
+  const themeItems: DropdownItem[] = [
+    {
+      label: 'Light',
+      icon: <Sun className="w-4 h-4" />,
+      onClick: () => handleThemeChange('light'),
+      active: theme === 'light',
+      activeClassName: 'text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/20'
+    },
+    {
+      label: 'Dark',
+      icon: <Moon className="w-4 h-4" />,
+      onClick: () => handleThemeChange('dark'),
+      active: theme === 'dark',
+      activeClassName: 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+    },
+    {
+      label: 'System',
+      icon: <Monitor className="w-4 h-4" />,
+      onClick: () => handleThemeChange('system'),
+      active: theme === 'system',
+      activeClassName: 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20'
+    }
+  ];
 
-      {/* Dropdown Menu */}
-      {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50">
-          <button
-            onClick={() => handleThemeChange('light')}
-            className={`w-full flex items-center space-x-3 px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${
-              theme === 'light' ? 'text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/20' : 'text-gray-700 dark:text-gray-300'
-            }`}
-          >
-            <Sun className="w-4 h-4" />
-            <span>Light</span>
-          </button>
-          
-          <button
-            onClick={() => handleThemeChange('dark')}
-            className={`w-full flex items-center space-x-3 px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${
-              theme === 'dark' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20' : 'text-gray-700 dark:text-gray-300'
-            }`}
-          >
-            <Moon className="w-4 h-4" />
-            <span>Dark</span>
-          </button>
-          
-          <button
-            onClick={() => handleThemeChange('system')}
-            className={`w-full flex items-center space-x-3 px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${
-              theme === 'system' ? 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20' : 'text-gray-700 dark:text-gray-300'
-            }`}
-          >
-            <Monitor className="w-4 h-4" />
-            <span>System</span>
-          </button>
+  return (
+    <DropdownMenu
+      trigger={
+        <div className="flex items-center space-x-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200">
+          {getThemeIcon()}
         </div>
-      )}
-    </div>
+      }
+      items={themeItems}
+      isOpen={isOpen}
+      onToggle={() => setIsOpen(!isOpen)}
+      onClose={() => setIsOpen(false)}
+      anchorPosition="bottom-right"
+      offset={{ x: 0, y: 8 }}
+      dropdownClassName="w-40"
+    />
   );
 } 

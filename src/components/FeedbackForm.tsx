@@ -70,12 +70,7 @@ export default function FeedbackForm() {
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Thank you for your feedback!</h2>
         <p className="text-gray-600 dark:text-gray-300 mb-6">Your input helps us improve Jam Band for everyone.</p>
-        <button
-          onClick={() => setIsSubmitted(false)}
-          className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-        >
-          Submit Another Feedback
-        </button>
+        <p className="text-sm text-gray-500 dark:text-gray-400">To submit another feedback, please refresh the page.</p>
       </div>
     );
   }

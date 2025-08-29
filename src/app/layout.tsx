@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import NavigationWrapper from "@/components/NavigationWrapper";
 import Footer from "@/components/Footer";
 
 export const viewport = {
@@ -78,7 +79,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "JZvGAackfa_KIrMmkf0uFmBYnU1XWEE0VBSkJYNhsJw",
   },
   alternates: {
     canonical: "https://jam-band-landing-page.vercel.app/",
@@ -108,8 +109,13 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="antialiased">
         <ThemeProvider>
-          {children}
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <NavigationWrapper />
+            <div className="flex flex-col flex-grow">
+              {children}
+            </div>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
