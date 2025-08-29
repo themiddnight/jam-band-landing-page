@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/opengraph-image.webp",
+        url: "/images/og/cover-index.webp",
         width: 1200,
         height: 630,
         alt: "COLLAB - Jam Band | Real-time Collaborative Jamming",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "COLLAB - Jam Band | Real-time Collaborative Jamming",
     description: "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome.",
-    images: ["/twitter-image.webp"],
+    images: ["/images/og/cover-index.webp"],
     creator: "@jam_band",
     site: "@jam_band",
   },
