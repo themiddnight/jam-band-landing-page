@@ -30,7 +30,7 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <p className='mb-2'>The ultimate real-time collaborative jamming web application for musicians who want to jam together online, perfect for virtual music brainstorming and fun jamming sessions.</p>
+              <p className='mb-2'>The real-time collaborative jamming web application for musicians who want to jam together online, perfect for virtual music brainstorming and fun jamming sessions.</p>
               <p className="text-amber-400">🚧 Currently in POC phase. Expect bugs and performance issues.</p>
             </motion.div>
           </div>

@@ -69,8 +69,7 @@ export default function FeedbackForm() {
       <div className="max-w-2xl mx-auto p-8 text-center bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Thank you for your feedback!</h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-6">Your input helps us improve Jam Band for everyone.</p>
-        <p className="text-sm text-gray-500 dark:text-gray-400">To submit another feedback, please refresh the page.</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-6">Your input helps us improve COLLAB for everyone.</p>
       </div>
     );
   }
@@ -79,7 +78,7 @@ export default function FeedbackForm() {
     <div className="max-w-2xl mx-auto p-5 md:p-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">We&apos;d Love Your Feedback!</h2>
-        <p className="text-gray-600 dark:text-gray-300">Help us make Jam Band even better for musicians like you.</p>
+        <p className="text-gray-600 dark:text-gray-300">Help us make COLLAB even better for musicians like you.</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

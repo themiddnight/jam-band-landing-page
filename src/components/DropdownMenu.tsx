@@ -2,6 +2,7 @@
 
 import { createPortal } from 'react-dom';
 import { ChevronDown } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
 export interface DropdownItem {
@@ -48,6 +49,7 @@ export default function DropdownMenu({
   showChevron = true,
   usePortal = false
 }: DropdownMenuProps) {
+  const router = useRouter();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ top: 0, left: 0 });
@@ -96,11 +98,17 @@ export default function DropdownMenu({
     if (item.onClick) {
       item.onClick();
     } else if (item.href && item.href.includes('#')) {
-      // Handle anchor links - extract just the hash part
-      const hash = item.href.includes('/#') ? item.href.split('/#')[1] : item.href.split('#')[1];
-      const targetElement = document.querySelector(`#${hash}`);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+      // Handle navigation to sections from other pages
+      if (item.href.startsWith('/#')) {
+        // Navigate to homepage first, then scroll to section
+        router.push(item.href);
+      } else if (item.href.startsWith('#')) {
+        // Already on homepage, just scroll to section
+        const hash = item.href.substring(1);
+        const targetElement = document.querySelector(`#${hash}`);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
     onClose();

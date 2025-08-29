@@ -3,10 +3,15 @@
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 import DropdownMenu from './DropdownMenu';
 import { NAVIGATION_MENU_ITEMS } from './constants/navigation';
+
+// Define proper types for navigation items
+type NavigationItem = typeof NAVIGATION_MENU_ITEMS[number];
+type DropdownItem = NonNullable<Extract<NavigationItem, { hasDropdown: true }>['dropdownItems']>[number];
 
 interface NavigationProps {
   mobileMenuOpen: boolean;
@@ -17,7 +22,114 @@ export default function Navigation({
   mobileMenuOpen, 
   onMobileMenuToggle 
 }: NavigationProps) {
+  const router = useRouter();
   const [sectionsDropdownOpen, setSectionsDropdownOpen] = useState(false);
+
+  // Reusable function to handle hash navigation
+  const handleHashNavigation = (href: string, closeMenu: boolean = false) => {
+    if (href.startsWith('/#')) {
+      // Navigate to homepage first, then scroll to section
+      router.push(href);
+      if (closeMenu) {
+        setTimeout(() => onMobileMenuToggle(), 100);
+      }
+    } else if (href.startsWith('#')) {
+      // Already on homepage, just scroll to section
+      const hash = href.substring(1);
+      const targetElement = document.querySelector(`#${hash}`);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+        if (closeMenu) {
+          setTimeout(() => onMobileMenuToggle(), 300);
+        }
+      }
+    }
+  };
+
+  // Reusable function to render navigation item
+  const renderNavigationItem = (item: NavigationItem, isMobile: boolean = false) => {
+    if (item.hasDropdown) {
+      return (
+        <DropdownMenu
+          key={item.label}
+          trigger={item.label}
+          items={(item as Extract<NavigationItem, { hasDropdown: true }>).dropdownItems || []}
+          isOpen={sectionsDropdownOpen}
+          onToggle={() => setSectionsDropdownOpen(!sectionsDropdownOpen)}
+          onClose={() => setSectionsDropdownOpen(false)}
+          className="text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-400 cursor-pointer whitespace-nowrap flex-shrink-0"
+          anchorPosition="bottom-left"
+          offset={{ x: 0, y: 8 }}
+          usePortal={true}
+        />
+      );
+    }
+
+    if (item.href.startsWith('#') || item.href.startsWith('/#')) {
+      const commonClasses = isMobile 
+        ? "block w-full text-left py-3 px-4 text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+        : "text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-400 transition-colors cursor-pointer whitespace-nowrap flex-shrink-0";
+
+      return (
+        <a 
+          key={item.href}
+          href={item.href}
+          className={commonClasses}
+          onClick={(e) => {
+            e.preventDefault();
+            handleHashNavigation(item.href, isMobile);
+          }}
+        >
+          {item.label}
+        </a>
+      );
+    }
+
+    const commonClasses = isMobile 
+      ? "block w-full text-left py-3 px-4 text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+      : "text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-400 transition-colors cursor-pointer whitespace-nowrap flex-shrink-0";
+
+    return (
+      <Link 
+        key={item.href}
+        href={item.href}
+        className={commonClasses}
+        onClick={isMobile ? () => onMobileMenuToggle() : undefined}
+      >
+        {item.label}
+      </Link>
+    );
+  };
+
+  // Reusable function to render dropdown section items for mobile
+  const renderDropdownSectionItems = (item: NavigationItem) => {
+    if (!item.hasDropdown || !item.dropdownItems) return null;
+    
+    return (
+      <div key={item.label} className="space-y-2">
+        {/* Section Header */}
+        <div className="py-2 px-4 text-lg font-semibold text-gray-900 dark:text-gray-100 border-b border-gray-200 dark:border-gray-700">
+          {item.label}
+        </div>
+        {/* Section Items */}
+        <div className="pl-4 space-y-1">
+          {item.dropdownItems.map((subItem: DropdownItem) => (
+          <a 
+            key={subItem.href}
+            href={subItem.href}
+            className="block w-full text-left py-2 px-4 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              handleHashNavigation(subItem.href, true);
+            }}
+          >
+            {subItem.label}
+          </a>
+        ))}
+      </div>
+    </div>
+    );
+  };
 
   return (
     <>
@@ -49,40 +161,9 @@ export default function Navigation({
                 </span>
               </Link>
               
-              {/* Navigation Links */}
+              {/* Desktop Navigation Links */}
               <div className="hidden md:flex items-center space-x-8 overflow-x-auto scrollbar-hide flex-1 min-w-0">
-                {NAVIGATION_MENU_ITEMS.map((item) => (
-                  item.hasDropdown ? (
-                    <DropdownMenu
-                      key={item.label}
-                      trigger={item.label}
-                      items={item.dropdownItems || []}
-                      isOpen={sectionsDropdownOpen}
-                      onToggle={() => setSectionsDropdownOpen(!sectionsDropdownOpen)}
-                      onClose={() => setSectionsDropdownOpen(false)}
-                      className="text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-400 cursor-pointer whitespace-nowrap flex-shrink-0"
-                      anchorPosition="bottom-left"
-                      offset={{ x: 0, y: 8 }}
-                      usePortal={true}
-                    />
-                  ) : item.href.startsWith('#') ? (
-                    <a 
-                      key={item.href}
-                      href={item.href}
-                      className="text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-400 transition-colors cursor-pointer whitespace-nowrap flex-shrink-0"
-                    >
-                      {item.label}
-                    </a>
-                  ) : (
-                    <Link 
-                      key={item.href}
-                      href={item.href}
-                      className="text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-400 transition-colors cursor-pointer whitespace-nowrap flex-shrink-0"
-                    >
-                      {item.label}
-                    </Link>
-                  )
-                ))}
+                {NAVIGATION_MENU_ITEMS.map((item) => renderNavigationItem(item))}
               </div>
             </div>
             
@@ -108,7 +189,11 @@ export default function Navigation({
                 aria-label="Toggle mobile menu" 
                 aria-expanded={mobileMenuOpen}
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? (
+                  <X className="w-6 h-6 text-gray-900 dark:text-gray-100" />
+                ) : (
+                  <Menu className="w-6 h-6 text-gray-900 dark:text-gray-100" />
+                )}
               </button>
             </div>
           </div>
@@ -123,67 +208,11 @@ export default function Navigation({
                 className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 overflow-hidden relative z-50"
               >
                 <div className="py-4 space-y-4">
-                  {NAVIGATION_MENU_ITEMS.map((item) => (
-                    item.hasDropdown ? (
-                      <div key={item.label} className="space-y-2">
-                        {/* Section Header */}
-                        <div className="py-2 px-4 text-lg font-semibold text-gray-900 dark:text-gray-100 border-b border-gray-200 dark:border-gray-700">
-                          {item.label}
-                        </div>
-                        {/* Section Items */}
-                        <div className="pl-4 space-y-1">
-                          {item.dropdownItems?.map((subItem) => (
-                            <a 
-                              key={subItem.href}
-                              href={subItem.href}
-                              className="block w-full text-left py-2 px-4 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                // Extract just the hash part from the href
-                                const hash = subItem.href.includes('/#') ? subItem.href.split('/#')[1] : subItem.href.split('#')[1];
-                                const targetElement = document.querySelector(`#${hash}`);
-                                if (targetElement) {
-                                  targetElement.scrollIntoView({ behavior: 'smooth' });
-                                  // Close mobile menu after a short delay to allow scroll to start
-                                  setTimeout(() => onMobileMenuToggle(), 300);
-                                }
-                              }}
-                            >
-                              {subItem.label}
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    ) : item.href.startsWith('#') ? (
-                      <a 
-                        key={item.href}
-                        href={item.href}
-                        className="block w-full text-left py-3 px-4 text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          // Extract just the hash part from the href
-                          const hash = item.href.includes('/#') ? item.href.split('/#')[1] : item.href.split('#')[1];
-                          const targetElement = document.querySelector(`#${hash}`);
-                          if (targetElement) {
-                            targetElement.scrollIntoView({ behavior: 'smooth' });
-                            // Close mobile menu after a short delay to allow scroll to start
-                            setTimeout(() => onMobileMenuToggle(), 300);
-                          }
-                        }}
-                      >
-                        {item.label}
-                      </a>
-                    ) : (
-                      <Link 
-                        key={item.href}
-                        href={item.href}
-                        className="block w-full text-left py-3 px-4 text-lg font-medium text-gray-900 dark:text-gray-100 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                        onClick={() => onMobileMenuToggle()}
-                      >
-                        {item.label}
-                      </Link>
-                    )
-                  ))}
+                  {NAVIGATION_MENU_ITEMS.map((item) => 
+                    item.hasDropdown 
+                      ? renderDropdownSectionItems(item)
+                      : renderNavigationItem(item, true)
+                  )}
                   <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                     <a 
                       href="https://jam-band-fe.vercel.app/" 

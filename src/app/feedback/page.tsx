@@ -11,7 +11,7 @@ export default function FeedbackPage() {
             {/* Mobile/Tablet Layout - Centered */}
             <div className="lg:hidden text-center mb-12">
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Help Us Improve Jam Band
+                Help Us Improve COLLAB
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 Your feedback is invaluable to us. Whether you&apos;ve found a bug, have a feature request, 
@@ -24,7 +24,7 @@ export default function FeedbackPage() {
               {/* Left Column - Header and Text */}
               <div className="flex flex-col justify-center h-full">
                 <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                  Help Us Improve Jam Band
+                  Help Us Improve COLLAB
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
                   Your feedback is invaluable to us. Whether you&apos;ve found a bug, have a feature request, 
