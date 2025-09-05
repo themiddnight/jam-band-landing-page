@@ -27,6 +27,11 @@ export const NAVIGATION_MENU_ITEMS = [
     dropdownItems: SECTION_MENU_ITEMS
   },
   {
+    label: 'About',
+    href: '/about',
+    hasDropdown: false
+  },
+  {
     label: 'Feedback',
     href: '/feedback',
     hasDropdown: false

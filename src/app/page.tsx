@@ -9,6 +9,7 @@ import {
   DetailSection,
   TechnicalRequirementsSection,
   CTASection,
+  SwapFeatureSection,
 } from '@/components';
 
 export default function HomePage() {
@@ -50,7 +51,9 @@ export default function HomePage() {
         "Ultra-low latency voice chat",
         "Synchronized metronome",
         "Cross-platform compatibility",
-        "No installation required"
+        "No installation required",
+        "Instrument swapping",
+        "Step sequencer"
       ],
       "screenshot": "https://jam-band-landing-page.vercel.app/assets/images/app-overview.webp",
       "softwareVersion": "1.0.0",
@@ -84,6 +87,7 @@ export default function HomePage() {
       
       <HeroSection />
       <FeaturesSection />
+      <SwapFeatureSection />
       <InstrumentsSection />
       <UseCasesSection />
       <DetailSection />

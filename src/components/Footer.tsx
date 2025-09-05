@@ -85,7 +85,21 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p>&copy; {currentYear} COLLAB - <a href="https://themiddnight-resume.vercel.app/resumes/themiddnight-dev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Pathompong Thitithan</a>. Built with ❤️ for musicians everywhere.</p>
+          <div className="flex items-center justify-center gap-2">
+            <span className="text-white font-bold text-lg">COLLAB</span>
+            <span className="text-sm text-white/70">•</span>
+            <span className="text-sm text-white/70">
+              © {currentYear} by{" "}
+              <a
+                href="http://themiddnight-resume.vercel.app/resumes/themiddnight-dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                Pathompong Thitithan
+              </a>
+            </span>
+          </div>
         </motion.div>
       </div>
     </footer>

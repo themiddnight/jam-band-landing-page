@@ -9,4 +9,5 @@ export { default as TechnicalRequirementsSection } from './TechnicalRequirements
 export { default as CTASection } from './CTASection';
 export { default as Footer } from './Footer';
 export { default as ThemeToggle } from './ThemeToggle';
+export { default as SwapFeatureSection } from './SwapFeatureSection';
 export { ThemeProvider, useTheme } from './ThemeProvider'; 
