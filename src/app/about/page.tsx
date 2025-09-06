@@ -48,6 +48,317 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* Objectives / Targeting */}
+          <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              Objectives & Targeting
+            </h2>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+              <li>Online indie band jamming</li>
+              <li>Online live performance</li>
+              <li>Session community for bands and audiences</li>
+              <li>Online songwriting brainstorm and session memo</li>
+              <li>Music theory assistant</li>
+              <li>
+                Virtual instruments — connect multiple devices together (e.g., multiple synths)
+              </li>
+            </ul>
+          </section>
+
+          {/* Roadmap */}
+          <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+              Roadmap
+            </h2>
+
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-green-500 via-blue-500 to-purple-500"></div>
+
+              {/* Current PoC */}
+              <div className="relative flex items-start mb-12">
+                <div className="flex-shrink-0 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-10">
+                  <span className="text-white font-bold text-sm">✓</span>
+                </div>
+                <div className="ml-6 flex-1">
+                  <div className="flex items-center mb-2">
+                    <h3 className="text-xl font-bold text-green-600 dark:text-green-400">
+                      Current PoC
+                    </h3>
+                    <span className="ml-3 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs rounded-full font-medium">
+                      LIVE
+                    </span>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 mb-3">
+                    See the working Proof of Concept in action at{" "}
+                    <a href="/app" className="underline text-blue-600 dark:text-blue-400">
+                      the app
+                    </a>
+                  </p>
+                  <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg border border-green-200 dark:border-green-800">
+                    <p className="text-sm text-green-700 dark:text-green-300">
+                      🎵 Real-time collaborative jamming is already working! Try it out with friends.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* PoC TODOs */}
+              <div className="relative flex items-start mb-12">
+                <div className="flex-shrink-0 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center shadow-lg z-10">
+                  <span className="text-white font-bold text-lg">⚡</span>
+                </div>
+                <div className="ml-6 flex-1">
+                  <div className="flex items-center mb-2">
+                    <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+                      PoC Improvements
+                    </h3>
+                    <span className="ml-3 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded-full font-medium">
+                      IN PROGRESS
+                    </span>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Enhancing the current PoC with better UX and more features
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="space-y-2">
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        Easier sequencer editing tools
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        Import / export sequencer file
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        Sync scale with room owner
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        Assign owner role to other user
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        Mute self instrument
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        Room settings for room owner
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        Sound effects
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        Mixer board
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        Disable preview sound to others
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Next Phase 1 */}
+              <div className="relative flex items-start mb-12">
+                <div className="flex-shrink-0 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center shadow-lg z-10">
+                  <span className="text-white font-bold text-lg">🚀</span>
+                </div>
+                <div className="ml-6 flex-1">
+                  <div className="flex items-center mb-2">
+                    <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400">
+                      Phase 1: Scale & Community
+                    </h3>
+                    <span className="ml-3 px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs rounded-full font-medium">
+                      FUNDING NEEDED
+                    </span>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Professional development with specialized team and funding
+                  </p>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                        🎼 Enhanced Music Features
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          More music scales (beyond major/minor)
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Multitrack recording (MIDI / audio)
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          More (custom) instruments
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Custom / recorded sample sounds
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Advanced modular synthesizer
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                        🌐 Infrastructure & Community
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Broader servers for low latency
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          100+ audience streaming capability
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Accounts, band party, virtual avatars
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Band-audience interactivity
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          AI pattern generation assist
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Monetization features
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Next Phase 2 */}
+              <div className="relative flex items-start">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center shadow-lg z-10">
+                  <span className="text-white font-bold text-lg">📱</span>
+                </div>
+                <div className="ml-6 flex-1">
+                  <div className="flex items-center mb-2">
+                    <h3 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                      Phase 2: Native Apps
+                    </h3>
+                    <span className="ml-3 px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 text-purple-700 dark:text-purple-300 text-xs rounded-full font-medium">
+                      FUTURE
+                    </span>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 mb-3">
+                    Professional-grade native application development
+                  </p>
+                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-4 rounded-lg border border-purple-200 dark:border-purple-800">
+                    <div className="flex items-center text-sm text-purple-700 dark:text-purple-300">
+                      <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3"></span>
+                      VST / Audio Unit plugin support
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Team Knowledge Requirements */}
+          {/* <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              Team Knowledge Requirements
+            </h2>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+              <li>Some knowledge of music theory</li>
+              <li>
+                Some knowledge of music production technology (MIDI standards, synthesizer, audio bus / FX chaining, etc.)
+              </li>
+              <li>Real-time communication networking (WebSocket, UDP / WebRTC, etc.)</li>
+              <li>JavaScript Audio API</li>
+              <li>
+                Strong knowledge about the tech stack and project architecture for scaling
+              </li>
+              <li>VST / Audio Unit API (future mobile app)</li>
+            </ul>
+          </section> */}
+
+          {/* Features */}
+          {/* <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              Features
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>• Multiple virtual instruments (Guitar, Bass, Keyboard, Drums, Synthesizer)</li>
+                <li>• Real-time collaborative jamming sessions</li>
+                <li>• Synchronized metronome with tap tempo and personal controls</li>
+                <li>• Step sequencer for pattern-based music creation</li>
+                <li>• WebRTC voice chat with connection health monitoring</li>
+                <li>• MIDI controller support and device management</li>
+              </ul>
+              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>• Preset management for instruments</li>
+                <li>• Room-based collaboration with role management</li>
+                <li>• Chat system for band communication</li>
+                <li>• Scale and chord selection with music theory helpers</li>
+                <li>• Network diagnostics and performance monitoring</li>
+                <li>• PWA support</li>
+              </ul>
+            </div>
+          </section> */}
+
+          {/* Coming Soon */}
+          {/* <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Coming Soon
+            </h2>
+            <div className="p-6 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
+              <p className="text-sm text-purple-700 dark:text-purple-300 leading-relaxed mb-3">
+                🚧 <span className="font-bold">Next on the roadmap:</span>
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <ul className="space-y-1 text-xs text-purple-700 dark:text-purple-300">
+                  <li>• Audio effects (reverb, delay, distortion, etc.)</li>
+                  <li>• Mixer controls in the user list for individual volume management</li>
+                  <li>• Advanced audio recording and export capabilities</li>
+                </ul>
+                <ul className="space-y-1 text-xs text-purple-700 dark:text-purple-300">
+                  <li>• More advanced synthesizers (FM, wavetable, granular synthesis)</li>
+                  <li>• Advanced modulation and LFO controls</li>
+                  <li>• Custom wavetable editor and import</li>
+                </ul>
+              </div>
+            </div>
+          </section> */}
+
+          {/* Server Information */}
+          <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Server Information
+            </h2>
+            <div className="p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <p className="text-sm text-blue-700 dark:text-blue-300 leading-relaxed">
+                <span className="font-medium">🌏 Server Location:</span>{" "}
+                Southeast Asia
+                <br />
+                <span className="font-medium">⚡ Latency Note:</span> Connection
+                latency may vary depending on your geographical location. Users
+                closer to Southeast Asia will experience lower latency for
+                optimal real-time jamming experience.
+              </p>
+            </div>
+          </section>
+
           {/* Tech Stack */}
           <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
@@ -112,73 +423,6 @@ export default function AboutPage() {
                   <li>• Zod 4 (Schema validation)</li>
                 </ul>
               </div>
-            </div>
-          </section>
-
-          {/* Features */}
-          {/* <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              Features
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <li>• Multiple virtual instruments (Guitar, Bass, Keyboard, Drums, Synthesizer)</li>
-                <li>• Real-time collaborative jamming sessions</li>
-                <li>• Synchronized metronome with tap tempo and personal controls</li>
-                <li>• Step sequencer for pattern-based music creation</li>
-                <li>• WebRTC voice chat with connection health monitoring</li>
-                <li>• MIDI controller support and device management</li>
-              </ul>
-              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <li>• Preset management for instruments</li>
-                <li>• Room-based collaboration with role management</li>
-                <li>• Chat system for band communication</li>
-                <li>• Scale and chord selection with music theory helpers</li>
-                <li>• Network diagnostics and performance monitoring</li>
-                <li>• PWA support</li>
-              </ul>
-            </div>
-          </section> */}
-
-          {/* Coming Soon */}
-          <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Coming Soon
-            </h2>
-            <div className="p-6 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
-              <p className="text-sm text-purple-700 dark:text-purple-300 leading-relaxed mb-3">
-                🚧 <span className="font-bold">Next on the roadmap:</span>
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <ul className="space-y-1 text-xs text-purple-700 dark:text-purple-300">
-                  <li>• Audio effects (reverb, delay, distortion, etc.)</li>
-                  <li>• Mixer controls in the user list for individual volume management</li>
-                  <li>• Advanced audio recording and export capabilities</li>
-                </ul>
-                <ul className="space-y-1 text-xs text-purple-700 dark:text-purple-300">
-                  <li>• More advanced synthesizers (FM, wavetable, granular synthesis)</li>
-                  <li>• Advanced modulation and LFO controls</li>
-                  <li>• Custom wavetable editor and import</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* Server Information */}
-          <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Server Information
-            </h2>
-            <div className="p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-              <p className="text-sm text-blue-700 dark:text-blue-300 leading-relaxed">
-                <span className="font-medium">🌏 Server Location:</span>{" "}
-                Southeast Asia
-                <br />
-                <span className="font-medium">⚡ Latency Note:</span> Connection
-                latency may vary depending on your geographical location. Users
-                closer to Southeast Asia will experience lower latency for
-                optimal real-time jamming experience.
-              </p>
             </div>
           </section>
 
