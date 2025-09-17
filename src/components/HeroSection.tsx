@@ -51,12 +51,6 @@ export default function HeroSection() {
               >
                 🎵 Start Jamming Now
               </a>
-              {/* <a 
-                href="/demo" 
-                className="border-2 border-purple-600 text-purple-600 dark:text-purple-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-600 hover:text-white transition-all duration-300"
-              >
-                🎬 Watch Demo
-              </a> */}
             </div>
           </motion.div>
           

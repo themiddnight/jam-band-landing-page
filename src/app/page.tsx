@@ -100,12 +100,6 @@ export default function HomePage() {
           "position": 2,
           "name": "About",
           "item": "https://jam-band-landing-page.vercel.app/about"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Demo",
-          "item": "https://jam-band-landing-page.vercel.app/demo"
         }
       ]
     }
