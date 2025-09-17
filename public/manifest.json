@@ -1,21 +1,21 @@
 {
-  "name": "COLLAB - Jam Band",
+  "name": "COLLAB - Jam Band | Real-time Collaborative Music Platform",
   "short_name": "COLLAB",
-  "description": "Real-time collaborative jamming web application with virtual instruments, ultra-low latency voice chat, and synchronized metronome.",
+  "description": "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome. Perfect for remote jam sessions, virtual music brainstorming, and collaborative music production. No installation required.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#667eea",
   "theme_color": "#667eea",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "scope": "/",
   "lang": "en-US",
-  "categories": ["music", "productivity", "social"],
+  "categories": ["music", "productivity", "social", "entertainment", "education"],
   "icons": [
     {
       "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "/apple-touch-icon.png",
@@ -38,10 +38,22 @@
   ],
   "shortcuts": [
     {
-      "name": "Start Jamming",
-      "short_name": "Jam",
-      "description": "Start a new jam session",
-      "url": "/?action=jam",
+      "name": "Try COLLAB App",
+      "short_name": "Try App",
+      "description": "Launch the COLLAB music collaboration app",
+      "url": "https://jam-band-fe.vercel.app/",
+      "icons": [
+        {
+          "src": "/icon-32x32.png",
+          "sizes": "32x32"
+        }
+      ]
+    },
+    {
+      "name": "About COLLAB",
+      "short_name": "About",
+      "description": "Learn about COLLAB platform",
+      "url": "/about",
       "icons": [
         {
           "src": "/icon-32x32.png",

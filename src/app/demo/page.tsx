@@ -1,10 +1,90 @@
-'use client';
-
+import type { Metadata } from "next";
+import Script from 'next/script';
 import { motion } from 'framer-motion';
 
+export const metadata: Metadata = {
+  title: "Demo & Tutorial - Learn How to Use COLLAB",
+  description: "Learn how to use COLLAB - Jam Band with our comprehensive demo and tutorial guide. Get started with virtual instruments, voice chat, metronome, and step sequencer for real-time collaborative music creation.",
+  openGraph: {
+    title: "Demo & Tutorial - Learn How to Use COLLAB",
+    description: "Learn how to use COLLAB - Jam Band with our comprehensive demo and tutorial guide. Get started with virtual instruments, voice chat, metronome, and step sequencer for real-time collaborative music creation.",
+    images: ["/images/og/cover-index.webp"],
+  },
+  keywords: [
+    "COLLAB demo",
+    "music collaboration tutorial",
+    "virtual instruments guide",
+    "real-time jamming tutorial",
+    "online music demo",
+    "collaborative music guide",
+    "web audio tutorial",
+    "music production demo"
+  ],
+};
+
 export default function DemoPage() {
+  // Structured Data for Demo page
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Demo & Tutorial - Learn How to Use COLLAB",
+    "description": "Learn how to use COLLAB - Jam Band with our comprehensive demo and tutorial guide. Get started with virtual instruments, voice chat, metronome, and step sequencer.",
+    "url": "https://jam-band-landing-page.vercel.app/demo",
+    "mainEntity": {
+      "@type": "HowTo",
+      "name": "How to Use COLLAB - Jam Band",
+      "description": "Step-by-step guide to using COLLAB for real-time collaborative music creation",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Create or Join a Room",
+          "text": "Start by creating a new jam session or joining an existing one using an invite link."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Choose Your Instrument",
+          "text": "Select from Guitar, Bass, Keyboard, Drums, or Synthesizer based on your preference."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Set Up Audio",
+          "text": "Allow microphone access for voice chat and ensure your speakers/headphones are working."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Start Jamming",
+          "text": "Use your keyboard or mouse to play your chosen instrument and collaborate with others."
+        }
+      ]
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jam-band-landing-page.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Demo",
+          "item": "https://jam-band-landing-page.vercel.app/demo"
+        }
+      ]
+    }
+  };
+
   return (
     <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <Script
+        id="demo-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20">
         <div className="max-w-7xl mx-auto text-center">

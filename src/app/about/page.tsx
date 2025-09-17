@@ -1,18 +1,83 @@
 import type { Metadata } from "next";
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: "About COLLAB - Real-time Collaborative Music Platform",
-  description: "Learn about COLLAB, a Proof of Concept for real-time collaborative music creation. Built with modern web technologies to explore the possibilities of virtual jamming.",
+  description: "Learn about COLLAB, a Proof of Concept for real-time collaborative music creation. Built with modern web technologies including React, Next.js, Tone.js, and WebRTC to explore the possibilities of virtual jamming and collaborative music production.",
   openGraph: {
     title: "About COLLAB - Real-time Collaborative Music Platform",
-    description: "Learn about COLLAB, a Proof of Concept for real-time collaborative music creation. Built with modern web technologies to explore the possibilities of virtual jamming.",
+    description: "Learn about COLLAB, a Proof of Concept for real-time collaborative music creation. Built with modern web technologies including React, Next.js, Tone.js, and WebRTC to explore the possibilities of virtual jamming and collaborative music production.",
     images: ["/images/og/cover-index.webp"],
   },
+  keywords: [
+    "COLLAB about",
+    "collaborative music platform",
+    "real-time music creation",
+    "virtual jamming technology",
+    "music collaboration POC",
+    "web audio development",
+    "React music app",
+    "Tone.js application",
+    "WebRTC music",
+    "music technology innovation"
+  ],
 };
 
 export default function AboutPage() {
+  // Structured Data for About page
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About COLLAB - Real-time Collaborative Music Platform",
+    "description": "Learn about COLLAB, a Proof of Concept for real-time collaborative music creation. Built with modern web technologies to explore the possibilities of virtual jamming.",
+    "url": "https://jam-band-landing-page.vercel.app/about",
+    "mainEntity": {
+      "@type": "SoftwareApplication",
+      "name": "COLLAB - Jam Band",
+      "description": "A Proof of Concept for real-time collaborative music creation platform",
+      "applicationCategory": "MusicApplication",
+      "author": {
+        "@type": "Person",
+        "name": "Pathompong Thitithan",
+        "url": "http://themiddnight-resume.vercel.app/resumes/themiddnight-dev"
+      },
+      "programmingLanguage": [
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js"
+      ],
+      "runtimePlatform": "Web Browser",
+      "softwareRequirements": "Modern web browser with Web Audio API support"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jam-band-landing-page.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://jam-band-landing-page.vercel.app/about"
+        }
+      ]
+    }
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-20">
+      <Script
+        id="about-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="text-center mb-12">
@@ -54,8 +119,9 @@ export default function AboutPage() {
               Objectives & Targeting
             </h2>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-              <li>Online indie band jamming</li>
-              <li>Online live performance</li>
+              <li>Collaborative music production and brainstorming sessions</li>
+              <li>Multitrack recording and async music creation</li>
+              <li>Online band jamming / live performance</li>
               <li>Session community for bands and audiences</li>
               <li>Online songwriting brainstorm and session memo</li>
               <li>Music theory assistant</li>
@@ -124,15 +190,29 @@ export default function AboutPage() {
                     <div className="space-y-2">
                       <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
                         <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        ✅ Sync scale with room owner
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        ✅ Mute self instrument/disable preview sound to others
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        ✅ Mixer board
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        ✅ Room settings for room owner
+                      </div>
+                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
+                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                         Easier sequencer editing tools
                       </div>
+                    </div>
+                    <div className="space-y-2">
                       <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
                         <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                         Import / export sequencer file
-                      </div>
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        Sync scale with room owner
                       </div>
                       <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
                         <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
@@ -140,42 +220,69 @@ export default function AboutPage() {
                       </div>
                       <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
                         <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        Mute self instrument
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        Room settings for room owner
-                      </div>
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                         Sound effects
-                      </div>
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        Mixer board
-                      </div>
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        Disable preview sound to others
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Next Phase 1 */}
+              {/* Phase 1 */}
               <div className="relative flex items-start mb-12">
                 <div className="flex-shrink-0 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center shadow-lg z-10">
-                  <span className="text-white font-bold text-lg">🚀</span>
+                  <span className="text-white font-bold text-lg">🎵</span>
                 </div>
                 <div className="ml-6 flex-1">
                   <div className="flex items-center mb-2">
                     <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400">
-                      Phase 1: Scale & Community
+                      Phase 1: Producer Room
                     </h3>
                     <span className="ml-3 px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs rounded-full font-medium">
+                      NEXT
+                    </span>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Enhanced production capabilities for serious music creation
+                  </p>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                        🎛️ Production Features
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Multitrack collaboration
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Async brainstorm sessions
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Advanced recording capabilities
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          Project management tools
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Phase 2 */}
+              <div className="relative flex items-start mb-12">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center shadow-lg z-10">
+                  <span className="text-white font-bold text-lg">🚀</span>
+                </div>
+                <div className="ml-6 flex-1">
+                  <div className="flex items-center mb-2">
+                    <h3 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                      Phase 2: Scale & Community
+                    </h3>
+                    <span className="ml-3 px-3 py-1 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 text-xs rounded-full font-medium">
                       FUNDING NEEDED
                     </span>
                   </div>
@@ -189,23 +296,19 @@ export default function AboutPage() {
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></span>
                           More music scales (beyond major/minor)
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                          Multitrack recording (MIDI / audio)
-                        </div>
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></span>
                           More (custom) instruments
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></span>
                           Custom / recorded sample sounds
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></span>
                           Advanced modular synthesizer
                         </div>
                       </div>
@@ -216,27 +319,27 @@ export default function AboutPage() {
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></span>
                           Broader servers for low latency
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></span>
                           100+ audience streaming capability
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></span>
                           Accounts, band party, virtual avatars
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></span>
                           Band-audience interactivity
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></span>
                           AI pattern generation assist
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                          <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></span>
                           Monetization features
                         </div>
                       </div>
@@ -245,26 +348,26 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Next Phase 2 */}
+              {/* Phase 3 */}
               <div className="relative flex items-start">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center shadow-lg z-10">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-600 to-pink-600 rounded-full flex items-center justify-center shadow-lg z-10">
                   <span className="text-white font-bold text-lg">📱</span>
                 </div>
                 <div className="ml-6 flex-1">
                   <div className="flex items-center mb-2">
-                    <h3 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                      Phase 2: Native Apps
+                    <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-pink-600 bg-clip-text text-transparent">
+                      Phase 3: Native Apps
                     </h3>
-                    <span className="ml-3 px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 text-purple-700 dark:text-purple-300 text-xs rounded-full font-medium">
+                    <span className="ml-3 px-3 py-1 bg-gradient-to-r from-blue-100 to-pink-100 dark:from-blue-900/30 dark:to-pink-900/30 text-blue-700 dark:text-blue-300 text-xs rounded-full font-medium">
                       FUTURE
                     </span>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 mb-3">
                     Professional-grade native application development
                   </p>
-                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-4 rounded-lg border border-purple-200 dark:border-purple-800">
-                    <div className="flex items-center text-sm text-purple-700 dark:text-purple-300">
-                      <span className="ml-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3"></span>
+                  <div className="bg-gradient-to-r from-blue-50 to-pink-50 dark:from-blue-900/20 dark:to-pink-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
+                    <div className="flex items-center text-sm text-blue-700 dark:text-blue-300">
+                      <span className="ml-4 w-2 h-2 bg-gradient-to-r from-blue-400 to-pink-400 rounded-full mr-3"></span>
                       VST / Audio Unit plugin support
                     </div>
                   </div>

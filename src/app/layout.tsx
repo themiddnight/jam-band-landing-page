@@ -5,17 +5,60 @@ import NavigationWrapper from "@/components/NavigationWrapper";
 import Footer from "@/components/Footer";
 
 export const viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jam-band-landing-page.vercel.app'),
-  title: "COLLAB - Jam Band | Real-time Collaborative Jamming",
-  description: "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome. Perfect for remote jam sessions and virtual music brainstorming.",
-  keywords: "music collaboration, virtual instruments, real-time music, jam session, online music, web audio, virtual jamming, music production, collaborative music, remote music, digital audio workstation, DAW, music software, online collaboration, music technology, web-based music, browser music, real-time audio, music streaming, virtual band, online rehearsal, music education, music learning, interactive music, social music, creative collaboration, music innovation, cross-platform music, accessible music, inclusive music, music democratization",
+  metadataBase: new URL("https://jam-band-landing-page.vercel.app"),
+  title: {
+    default: "COLLAB - Jam Band | Real-time Collaborative Music Platform",
+    template: "%s | COLLAB - Jam Band",
+  },
+  description:
+    "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome. Perfect for remote jam sessions, virtual music brainstorming, and collaborative music production. No installation required - jam directly in your browser.",
+  keywords: [
+    "music collaboration",
+    "virtual instruments",
+    "real-time music",
+    "jam session",
+    "online music",
+    "web audio",
+    "virtual jamming",
+    "music production",
+    "collaborative music",
+    "remote music",
+    "digital audio workstation",
+    "DAW",
+    "music software",
+    "online collaboration",
+    "music technology",
+    "web-based music",
+    "browser music",
+    "real-time audio",
+    "music streaming",
+    "virtual band",
+    "online rehearsal",
+    "music education",
+    "music learning",
+    "interactive music",
+    "social music",
+    "creative collaboration",
+    "music innovation",
+    "cross-platform music",
+    "accessible music",
+    "inclusive music",
+    "music democratization",
+    "WebRTC music",
+    "synchronized metronome",
+    "step sequencer",
+    "MIDI support",
+    "Tone.js",
+    "collaborative jamming",
+    "virtual music studio",
+  ],
   authors: [{ name: "COLLAB Team" }],
   creator: "COLLAB Team",
   publisher: "COLLAB",
@@ -32,8 +75,9 @@ export const metadata: Metadata = {
     "theme-color": "#667eea",
   },
   openGraph: {
-    title: "COLLAB - Jam Band | Real-time Collaborative Jamming",
-    description: "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome. Perfect for remote jam sessions and virtual music brainstorming.",
+    title: "COLLAB - Jam Band | Real-time Collaborative Music Platform",
+    description:
+      "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome. Perfect for remote jam sessions, virtual music brainstorming, and collaborative music production. No installation required - jam directly in your browser.",
     type: "website",
     url: "https://jam-band-landing-page.vercel.app/",
     siteName: "COLLAB - Jam Band",
@@ -43,18 +87,19 @@ export const metadata: Metadata = {
         url: "/images/og/cover-index.webp",
         width: 1200,
         height: 630,
-        alt: "COLLAB - Jam Band | Real-time Collaborative Jamming",
+        alt: "COLLAB - Jam Band | Real-time Collaborative Music Platform - Virtual instruments, voice chat, synchronized metronome",
         type: "image/webp",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "COLLAB - Jam Band | Real-time Collaborative Jamming",
-    description: "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome.",
+    title: "COLLAB - Jam Band | Real-time Collaborative Music Platform",
+    description:
+      "Create music together in real-time with virtual instruments, ultra-low latency voice chat, and synchronized metronome. No installation required - jam directly in your browser.",
     images: ["/images/og/cover-index.webp"],
-    creator: "@jam_band",
-    site: "@jam_band",
+    creator: "@collab_jamband",
+    site: "@collab_jamband",
   },
   icons: {
     icon: [
@@ -111,9 +156,7 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="flex flex-col min-h-screen">
             <NavigationWrapper />
-            <div className="flex flex-col flex-grow">
-              {children}
-            </div>
+            <div className="flex flex-col flex-grow">{children}</div>
             <Footer />
           </div>
         </ThemeProvider>

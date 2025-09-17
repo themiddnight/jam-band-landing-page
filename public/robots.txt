@@ -2,7 +2,15 @@ User-agent: *
 Allow: /
 Disallow: /private/
 Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /temp/
 
+# Allow important pages
+Allow: /about
+Allow: /feedback
+
+# Block AI crawlers
 User-agent: GPTBot
 Disallow: /
 
@@ -18,4 +26,10 @@ Disallow: /
 User-agent: Claude-Web
 Disallow: /
 
-Sitemap: https://jam-band-fe.vercel.app/sitemap.xml 
+User-agent: Baiduspider
+Disallow: /
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+Sitemap: https://jam-band-landing-page.vercel.app/sitemap.xml 
