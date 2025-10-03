@@ -139,9 +139,9 @@ export default function AboutPage() {
 
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-green-500 via-blue-500 to-purple-500"></div>
+              <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-green-500 via-purple-500 to-blue-500"></div>
 
-              {/* Current PoC */}
+              {/* PoC Phase - Combined Current + Improvements */}
               <div className="relative flex items-start mb-12">
                 <div className="flex-shrink-0 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-10">
                   <span className="text-white font-bold text-sm">✓</span>
@@ -149,80 +149,133 @@ export default function AboutPage() {
                 <div className="ml-6 flex-1">
                   <div className="flex items-center mb-2">
                     <h3 className="text-xl font-bold text-green-600 dark:text-green-400">
-                      Current PoC
+                      PoC Phase - Real-time Jamming Platform
                     </h3>
                     <span className="ml-3 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs rounded-full font-medium">
                       LIVE
                     </span>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 mb-3">
-                    See the working Proof of Concept in action at{" "}
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    Full-featured collaborative music platform with advanced real-time capabilities.{" "}
                     <a href="/app" className="underline text-blue-600 dark:text-blue-400">
-                      the app
+                      Try it now
                     </a>
                   </p>
-                  <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-lg border border-green-200 dark:border-green-800">
-                    <p className="text-sm text-green-700 dark:text-green-300">
-                      🎵 Real-time collaborative jamming is already working! Try it out with friends.
-                    </p>
-                  </div>
-                </div>
-              </div>
+                  
+                  <div className="space-y-4">
+                    {/* Core Features */}
+                    <div>
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                        🎸 Core Features
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Multiple virtual instruments (Guitar, Bass, Keyboard, Drums, Synthesizer)
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Ultra-low latency WebRTC voice chat
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Synchronized metronome across all users
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Real-time collaborative step sequencer
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          General MIDI percussion mapping (Z/X page navigation)
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          MIDI controller support
+                        </div>
+                      </div>
+                    </div>
 
-              {/* PoC TODOs */}
-              <div className="relative flex items-start mb-12">
-                <div className="flex-shrink-0 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center shadow-lg z-10">
-                  <span className="text-white font-bold text-lg">⚡</span>
-                </div>
-                <div className="ml-6 flex-1">
-                  <div className="flex items-center mb-2">
-                    <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
-                      PoC Improvements
-                    </h3>
-                    <span className="ml-3 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded-full font-medium">
-                      IN PROGRESS
-                    </span>
+                    {/* Audio & Effects */}
+                    <div>
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                        🎚️ Audio & Effects
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Real-time audio effects (Reverb, Delay, Distortion, Chorus, Filter)
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Per-user mixer with individual effect chains
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Instrument mute/solo controls
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Preset management for instruments and effects
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Room Management */}
+                    <div>
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                        👥 Room Management
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Room owner/band member role system
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Scale synchronization with room owner
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Room settings and privacy controls
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Instrument swap and user management
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* User Experience */}
+                    <div>
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                        📱 User Experience
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          PWA support (installable app)
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Music theory assistance (scales, chords)
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Real-time latency monitoring
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Cross-browser compatibility
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Enhancing the current PoC with better UX and more features
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <div className="space-y-2">
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        ✅ Sync scale with room owner
-                      </div>
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        ✅ Mute self instrument/disable preview sound to others
-                      </div>
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        ✅ Mixer board
-                      </div>
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        ✅ Room settings for room owner
-                      </div>
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        Easier sequencer editing tools
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        Import / export sequencer file
-                      </div>
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        Assign owner role to other user
-                      </div>
-                      <div className="flex items-center text-sm text-gray-700 dark:text-gray-300">
-                        <span className="ml-4 w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                        Sound effects
-                      </div>
-                    </div>
+
+                  <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border border-green-200 dark:border-green-800 mt-4">
+                    <p className="text-sm text-green-700 dark:text-green-300">
+                      🎵 <strong>Fully functional collaborative music platform!</strong> Experience real-time jamming with friends. All core features are live and battle-tested.
+                    </p>
                   </div>
                 </div>
               </div>

@@ -31,6 +31,10 @@ export const NAVIGATION_MENU_ITEMS = [
     href: '/about',
     hasDropdown: false
   },
+  { label: 'Instructions',
+    href: '/instructions',
+    hasDropdown: false
+  },
   {
     label: 'Feedback',
     href: '/feedback',
