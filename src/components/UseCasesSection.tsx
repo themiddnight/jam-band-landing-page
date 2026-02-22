@@ -5,24 +5,24 @@ import { motion } from 'framer-motion';
 
 const useCases = [
   {
-    icon: '🌍',
-    title: 'Remote Collaboration',
-    description: 'Jam with friends anywhere in the world with minimal latency'
+    icon: '🤝',
+    title: 'Collaborative Groups',
+    description: 'Work together in private or public bands with real-time state sync and project locks.'
   },
   {
-    icon: '🎛️',
-    title: 'Music Experimenters',
-    description: 'Brainstorm ideas, experiment with synthesizers, create patterns for jamming'
+    icon: '🍴',
+    title: 'Creative Forking',
+    description: 'Fork interesting public projects to build upon others\' ideas while maintaining original attribution.'
   },
   {
-    icon: '🎸',
-    title: 'Musicians',
-    description: 'Virtual instruments with music theory assistance for all skill levels'
+    icon: '🎨',
+    title: 'Music Producers',
+    description: 'Use the Arrange Room as a lightweight, cloud-based DAW for production and brainstorming.'
   },
   {
-    icon: '🎵',
-    title: 'Music Learners',
-    description: 'Built-in scales, chords, and theory helpers for skill development'
+    icon: '🏆',
+    title: 'Contributors',
+    description: 'Auto-track contributions to projects. See your impact on the community through your profile.'
   },
 ];
 
@@ -32,7 +32,7 @@ export default function UseCasesSection() {
       {/* Background Image Effect */}
       {/* <div className="absolute inset-0" style={{ opacity: 0.15 }}>
         <Image 
-          src="/assets/images/mobile-view.webp" 
+          src="/images/mobile-view.webp" 
           alt="" 
           fill
           className="object-cover transform scale-150 -translate-x-12 -translate-y-12 blur-md"

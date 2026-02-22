@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { APP_URL } from './constants/navigation';
 
 export default function HeroSection() {
   return (
@@ -9,7 +10,7 @@ export default function HeroSection() {
       {/* Background Image Effect */}
       <div className="absolute inset-0" style={{ opacity: 0.1 }}>
         <Image 
-          src="/assets/images/app-overview.webp" 
+          src="/images/app-overview.webp" 
           alt="" 
           fill
           className="object-cover transform scale-150 -translate-x-20 -translate-y-20 blur-md"
@@ -26,30 +27,30 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Jam Together
+              Jam & Collaborate
               <span className="block text-5xl sm:text-6xl lg:text-7xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-extrabold">
                 In Real-Time
               </span>
             </h1>
             
             {/* Demo Banner */}
-            <div className="mb-6 inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 border border-amber-200 dark:border-amber-700 rounded-full">
-              <span className="text-amber-800 dark:text-amber-200 text-sm font-medium">🚧 POC Version - Expect bugs and performance issues</span>
+            <div className="mb-6 inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 border border-purple-200 dark:border-purple-700 rounded-full">
+              <span className="text-purple-800 dark:text-purple-200 text-sm font-medium">✨ Test Version - Now with Arrange Rooms for Production</span>
             </div>
             
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-              COLLAB - Jam Band is the real-time collaborative jamming web application. 
-              Jam with friends anywhere in the world<a href="#technical-requirements" className="text-amber-500">*</a> with virtual instruments and ultra-low latency voice chat for music performance.
+              COLLAB - Jam Band is the ultimate real-time collaborative production & jamming suite. 
+              Jam live with friends or produce together in our collaborative DAW with built-in music theory assistance.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
-                href="https://jam-band-fe.vercel.app/" 
+                href={APP_URL} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-gradient-to-r from-amber-500 to-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:from-amber-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 shadow-lg music-btn"
+                className="bg-gradient-to-r from-amber-500 to-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:from-amber-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 music-btn"
               >
-                🎵 Start Jamming Now
+                🚀 Start Creating Now
               </a>
             </div>
           </motion.div>
@@ -63,7 +64,7 @@ export default function HeroSection() {
           >
             <div className="relative z-10">
               <Image 
-                src="/assets/images/app-overview.webp" 
+                src="/images/app-overview.webp" 
                 alt="COLLAB - Jam Band App Interface" 
                 width={600}
                 height={400}
@@ -73,7 +74,7 @@ export default function HeroSection() {
             {/* Large background image for depth */}
             <div className="absolute inset-0 overflow-hidden" style={{ opacity: 0.15 }}>
               <Image 
-                src="/assets/images/app-overview.webp" 
+                src="/images/app-overview.webp" 
                 alt="" 
                 width={800}
                 height={600}

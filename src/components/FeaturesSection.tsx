@@ -5,34 +5,34 @@ import { motion } from 'framer-motion';
 
 const features = [
   {
-    icon: '🎸',
-    title: 'Virtual Instruments',
-    description: 'Guitar, Bass, Keyboard, Drums, and Synthesizer powered by professional audio libraries (smplr & Tone.js) with built-in music theory assistance for all skill levels.'
-  },
-  {
-    icon: '🎤',
-    title: 'Ultra-Low Latency Voice',
-    description: 'Voice chat prioritized for low latency over quality, perfect for singing and physical instrument input during jamming. Performance depends on browser and network.'
-  },
-  {
-    icon: '🥁',
-    title: 'Synchronized Metronome',
-    description: 'Keep perfect time together across all users with our synchronized metronome system.'
+    icon: '🏠',
+    title: 'Dual-Room Experience',
+    description: 'Switch between Perform Rooms for live jamming and Arrange Rooms for collaborative DAW production and arrangement.'
   },
   {
     icon: '🎼',
-    title: 'Step Sequencer',
-    description: 'Create complex patterns and sequences together in real-time collaboration for jamming and music brainstorming.'
+    title: 'Music Theory Assistance',
+    description: 'Intelligent scale selection, chord triggers, and musical mapping to help you play and produce music even without formal training.'
   },
   {
-    icon: '🎹',
-    title: 'MIDI Controller Support',
-    description: 'Use your external MIDI devices and physical instruments for enhanced jamming experience. Best supported in Chromium-based browsers.'
+    icon: '⚡',
+    title: 'Real-Time Sync Engine',
+    description: 'Powered by an Ephemeral/Commit pattern and per-room mutex to ensure seamless synchronization across all collaborators.'
   },
   {
-    icon: '📱',
-    title: 'PWA Support',
-    description: 'Install as a native app on any device for the best experience.'
+    icon: '🎸',
+    title: 'Professional Virtual Instruments',
+    description: 'High-quality sound engines (smplr & Tone.js) with MIDI support for guitar, bass, keyboard, drums, and synthesizers.'
+  },
+  {
+    icon: '🤝',
+    title: 'Collaborative Production',
+    description: 'Fork public projects, track contributions, and manage project locks to work effectively with your band members.'
+  },
+  {
+    icon: '🎤',
+    title: 'Low-Latency Voice Chat',
+    description: 'WebRTC-powered voice chat prioritized for timing, perfect for synchronized musical collaboration and communication.'
   }
 ];
 
@@ -42,7 +42,7 @@ export default function FeaturesSection() {
       {/* Background Image Effect */}
       {/* <div className="absolute inset-0" style={{ opacity: 0.15 }}>
         <Image 
-          src="/assets/images/app-overview.webp" 
+          src="/images/app-overview.webp" 
           alt="" 
           fill
           className="object-cover transform scale-150 -translate-x-20 -translate-y-20 blur-md"

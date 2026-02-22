@@ -11,16 +11,21 @@ export default function RoomMixSection() {
           <Users className="w-8 h-8 text-purple-600" />
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-              Room Member Mix
+              Room Member Mix (Live Jamming)
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mt-1">
-              Control audio levels and manage room collaboration
+              Control audio levels during live performances in Perform Rooms
             </p>
           </div>
         </div>
 
         {/* Room Mix Overview */}
-        <div className="mb-8">
+        <div className="mb-8 mt-6">
+          <div className="bg-purple-100 dark:bg-purple-900/30 border-l-4 border-purple-600 p-4 mb-6">
+            <p className="text-sm text-purple-800 dark:text-purple-300">
+              <strong>Note:</strong> These advanced mixing controls are exclusive to <strong>Perform Rooms</strong>. In Arrange Rooms, the focus is on the DAW timeline, and the member section acts as a participant list.
+            </p>
+          </div>
           <div className="relative rounded-xl overflow-hidden shadow-lg mb-4">
             <Image
               src="/images/instructions/7-room-member-mix.png"
@@ -31,7 +36,7 @@ export default function RoomMixSection() {
             />
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400 text-center ">
-            Individual volume controls and member management for each room participant
+            Individual volume controls and member management for Perform Room participants
           </p>
         </div>
 
@@ -42,7 +47,7 @@ export default function RoomMixSection() {
           </h3>
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border border-blue-200 dark:border-blue-700 rounded-xl p-6">
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-              The Room Member Mix is your personal control center for managing how you hear everyone 
+              In a **Perform Room**, the Room Member Mix is your personal control center for managing how you hear everyone 
               else in the jam session. Each member has their own volume slider that only affects what 
               you hear - it doesn&apos;t change what others hear.
             </p>

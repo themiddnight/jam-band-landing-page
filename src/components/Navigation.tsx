@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 import DropdownMenu from './DropdownMenu';
-import { NAVIGATION_MENU_ITEMS } from './constants/navigation';
+import { NAVIGATION_MENU_ITEMS, APP_URL } from './constants/navigation';
 
 // Define proper types for navigation items
 type NavigationItem = typeof NAVIGATION_MENU_ITEMS[number];
@@ -171,7 +171,7 @@ export default function Navigation({
               
               {/* CTA Button (Hidden on Mobile) */}
               <a 
-                href="https://jam-band-fe.vercel.app/" 
+                href={APP_URL} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hidden md:inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
@@ -212,7 +212,7 @@ export default function Navigation({
                   )}
                   <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                     <a 
-                      href="https://jam-band-fe.vercel.app/" 
+                      href={APP_URL} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="block w-full text-center py-3 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300"

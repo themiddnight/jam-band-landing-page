@@ -30,8 +30,8 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <p className='mb-2'>The real-time collaborative jamming web application for musicians who want to jam together online, perfect for virtual music brainstorming and fun jamming sessions.</p>
-              <p className="text-amber-400">🚧 Currently in POC phase. Expect bugs and performance issues.</p>
+              <p className='mb-2'>The real-time collaborative production & jamming suite for musicians. Perfect for live jamming, collaborative DAW production, and music brainstorming.</p>
+              <p className="text-purple-400">✨ Currently in Alpha testing phase. Join the next generation of musical collaboration.</p>
             </motion.div>
           </div>
 
@@ -74,6 +74,7 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li><a href="https://github.com/danigb/smplr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">smplr Audio Library</a></li>
               <li><a href="https://tonejs.github.io/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Tone.js Framework</a></li>
+              <li><a href="https://github.com/tonaljs/tonal" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Tonal.js Library</a></li>
             </ul>
           </motion.div>
         </div>

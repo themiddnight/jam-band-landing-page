@@ -6,10 +6,10 @@ import {
   FeaturesSection,
   InstrumentsSection,
   UseCasesSection,
-  DetailSection,
   TechnicalRequirementsSection,
   CTASection,
-  SwapFeatureSection,
+  ExperienceSection,
+  MusicTheorySection,
 } from '@/components';
 
 export default function HomePage() {
@@ -65,7 +65,7 @@ export default function HomePage() {
       "screenshot": "https://jam-band-landing-page.vercel.app/images/og/cover-index.webp",
       "softwareVersion": "1.0.0",
       "datePublished": "2024-08-27",
-      "dateModified": "2025-01-17",
+      "dateModified": "2026-02-22",
       "inLanguage": "en-US",
       "isAccessibleForFree": true,
       "aggregateRating": {
@@ -84,7 +84,7 @@ export default function HomePage() {
       "name": "COLLAB Team"
     },
     "datePublished": "2024-08-27",
-    "dateModified": "2025-01-17",
+    "dateModified": "2026-02-22",
     "inLanguage": "en-US",
     "breadcrumb": {
       "@type": "BreadcrumbList",
@@ -117,10 +117,10 @@ export default function HomePage() {
       
       <HeroSection />
       <FeaturesSection />
-      <SwapFeatureSection />
+      <ExperienceSection />
+      <MusicTheorySection />
       <InstrumentsSection />
       <UseCasesSection />
-      <DetailSection />
       <TechnicalRequirementsSection />
       <CTASection />
     </div>

@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { Play, Users, Music, Headphones, Heart } from 'lucide-react';
+import { Users, Music, Heart, Zap } from 'lucide-react';
 
 export default function OverviewSection() {
   return (
@@ -20,10 +20,10 @@ export default function OverviewSection() {
         </div>
 
         {/* App Overview Image */}
-        <div className="mb-8">
+        <div className="my-8">
           <div className="relative rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/images/instructions/0-overall.png"
+              src="/images/lobby-entry.webp"
               alt="COLLAB - Jam Band App Overview"
               width={1200}
               height={800}
@@ -61,26 +61,26 @@ export default function OverviewSection() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div
-              className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 p-6 rounded-xl border border-purple-200 dark:border-purple-700"
+              className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-6 rounded-xl border border-purple-200 dark:border-purple-700"
             >
               <div className="flex items-center gap-3 mb-3">
                 <Music className="w-6 h-6 text-purple-600" />
-                <h4 className="font-semibold text-gray-900 dark:text-white">Virtual Instruments</h4>
+                <h4 className="font-semibold text-gray-900 dark:text-white">Perform Rooms</h4>
               </div>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Guitar, Bass, Keyboard, Drums, and Synthesizer with built-in music theory assistance for all skill levels.
+                Live jamming environment with synchronized instruments, voice chat, and real-time interaction for bands and audience.
               </p>
             </div>
 
             <div
-              className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl border border-green-200 dark:border-green-700"
+              className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-700"
             >
               <div className="flex items-center gap-3 mb-3">
-                <Headphones className="w-6 h-6 text-green-600" />
-                <h4 className="font-semibold text-gray-900 dark:text-white">Ultra-Low Latency Voice</h4>
+                <Users className="w-6 h-6 text-blue-600" />
+                <h4 className="font-semibold text-gray-900 dark:text-white">Arrange Rooms</h4>
               </div>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Voice chat optimized for musical timing, perfect for singing and real instrument input during jamming.
+                Collaborative DAW for production. Arrange tracks, fork projects, and manage versions together in real-time.
               </p>
             </div>
 
@@ -88,11 +88,11 @@ export default function OverviewSection() {
               className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-xl border border-amber-200 dark:border-amber-700"
             >
               <div className="flex items-center gap-3 mb-3">
-                <Play className="w-6 h-6 text-amber-600" />
-                <h4 className="font-semibold text-gray-900 dark:text-white">Step Sequencer</h4>
+                <Heart className="w-6 h-6 text-amber-600" />
+                <h4 className="font-semibold text-gray-900 dark:text-white">Music Theory Assistance</h4>
               </div>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Create complex patterns and sequences together in real-time collaboration for jamming and music brainstorming.
+                Intelligent scales, chord triggers, and mapping to help you create professional-sounding music regardless of skill level.
               </p>
             </div>
 
@@ -100,11 +100,11 @@ export default function OverviewSection() {
               className="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 p-6 rounded-xl border border-pink-200 dark:border-pink-700"
             >
               <div className="flex items-center gap-3 mb-3">
-                <Users className="w-6 h-6 text-pink-600" />
-                <h4 className="font-semibold text-gray-900 dark:text-white">Real-time Collaboration</h4>
+                <Zap className="w-6 h-6 text-pink-600" />
+                <h4 className="font-semibold text-gray-900 dark:text-white">Real-Time Sync</h4>
               </div>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Play together synchronized with room management, member roles, and instant audio/visual feedback.
+                Advanced Ephemeral/Commit pattern ensures all changes are synced instantly across all collaborators.
               </p>
             </div>
           </div>

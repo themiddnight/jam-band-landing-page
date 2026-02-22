@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from 'next/script';
+import { APP_URL } from "@/components/constants/navigation";
 
 export const metadata: Metadata = {
   title: "About COLLAB - Real-time Collaborative Music Platform",
@@ -97,18 +98,14 @@ export default function AboutPage() {
               What is COLLAB?
             </h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              COLLAB is a Proof of Concept (POC) for my idea to create an
-              application where users can jam together in real-time. This
-              collaborative music platform allows multiple users to play
-              different instruments simultaneously, creating a virtual band
-              experience through the web.
+              COLLAB began as a Proof of Concept (POC)—a simple idea to explore real-time musical collaboration over the web. What started as an experiment to see if users could play instruments together simultaneously has evolved into a high-performance music production ecosystem.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              Today, it bridges the gap between spontaneous jamming in <strong>Perform Rooms</strong> and granular, professional arrangement in <strong>Arrange Rooms</strong>, providing a seamless flow from live inspiration to recorded reality.
             </p>
             <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800">
-              <p className="text-sm text-purple-700 dark:text-purple-300 leading-relaxed">
-                🎵 This is a <span className="font-bold">vibe-coding</span>{" "}
-                project (Even this content was generated with a little help
-                from AI! 🤓📝) - built while jamming to music and exploring the
-                creative intersection of coding and music production! 🤖✨
+              <p className="text-sm text-purple-700 dark:text-purple-300 leading-relaxed italic">
+                🚀 <span className="font-bold">COLLAB</span> is a high-fidelity Proof of Concept (POC) for a next-generation music platform developed through <span className="font-bold">&quot;vibe-coding&quot;</span>—a synergy between advanced AI agents and creative musical vision. What began as a passion project has evolved into a showcase of real-time synchronization and collaborative DAW capabilities, built at high velocity to bridge the gap between imagination and production-ready software.
               </p>
             </div>
           </section>
@@ -118,15 +115,26 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Objectives & Targeting
             </h2>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-              <li>Collaborative music production and brainstorming sessions</li>
-              <li>Multitrack recording and async music creation</li>
-              <li>Online band jamming / live performance</li>
-              <li>Session community for bands and audiences</li>
-              <li>Online songwriting brainstorm and session memo</li>
-              <li>Music theory assistant</li>
-              <li>
-                Virtual instruments — connect multiple devices together (e.g., multiple synths)
+            <ul className="space-y-4 text-gray-700 dark:text-gray-300">
+              <li className="flex items-start">
+                <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-purple-500 rounded-full mr-3"></span>
+                <span><strong>Real-time Synchronized Jamming:</strong> Play high-quality virtual instruments together with ultra-low latency and integrated voice chat.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-purple-500 rounded-full mr-3"></span>
+                <span><strong>Collaborative DAW Production:</strong> A full-featured, browser-based workstation for arranging, editing, and producing multitrack projects.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-purple-500 rounded-full mr-3"></span>
+                <span><strong>Musical Intelligence:</strong> Integrated music theory assistance and scale synchronization for harmonized brainstorming sessions.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-purple-500 rounded-full mr-3"></span>
+                <span><strong>Open Evolution:</strong> A community-driven engine featuring project forking, intelligent contributor tracking, and collaborative versioning.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-purple-500 rounded-full mr-3"></span>
+                <span><strong>Hardware-Software Synergy:</strong> Seamless MIDI controller integration and multi-device connectivity for flexible performance setups.</span>
               </li>
             </ul>
           </section>
@@ -139,7 +147,7 @@ export default function AboutPage() {
 
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-green-500 via-purple-500 to-blue-500"></div>
+              <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-green-500 from-[33%] via-purple-500 via-[66%] to-blue-500"></div>
 
               {/* PoC Phase - Combined Current + Improvements */}
               <div className="relative flex items-start mb-12">
@@ -156,168 +164,114 @@ export default function AboutPage() {
                     </span>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Full-featured collaborative music platform with advanced real-time capabilities.{" "}
-                    <a href="/app" className="underline text-blue-600 dark:text-blue-400">
-                      Try it now
-                    </a>
+                    Full-featured collaborative music platform with advanced real-time capabilities.
                   </p>
                   
                   <div className="space-y-4">
-                    {/* Core Features */}
+                    {/* Core Jamming Experience */}
                     <div>
                       <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                        🎸 Core Features
+                        🎸 Core Jamming & Interaction
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
                         <div className="flex items-center">
                           <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Multiple virtual instruments (Guitar, Bass, Keyboard, Drums, Synthesizer)
+                          5 Virtual Instruments (Guitar, Bass, Keys, Drums, Synth)
                         </div>
                         <div className="flex items-center">
                           <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Ultra-low latency WebRTC voice chat
+                          Ultra-low latency WebRTC Voice Chat
                         </div>
                         <div className="flex items-center">
                           <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Synchronized metronome across all users
+                          Real-time Collaborative Step Sequencer
                         </div>
                         <div className="flex items-center">
                           <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Real-time collaborative step sequencer
+                          Music Theory Assistance (Scale Sync, Chord Triggers)
                         </div>
                         <div className="flex items-center">
                           <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          General MIDI percussion mapping (Z/X page navigation)
+                          MIDI Controller & Keyboard mapping support
                         </div>
                         <div className="flex items-center">
                           <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          MIDI controller support
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Audio & Effects */}
-                    <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                        🎚️ Audio & Effects
-                      </h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Real-time audio effects (Reverb, Delay, Distortion, Chorus, Filter)
-                        </div>
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Per-user mixer with individual effect chains
-                        </div>
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Instrument mute/solo controls
-                        </div>
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Preset management for instruments and effects
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Room Management */}
-                    <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                        👥 Room Management
-                      </h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Room owner/band member role system
-                        </div>
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Scale synchronization with room owner
-                        </div>
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Room settings and privacy controls
-                        </div>
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Instrument swap and user management
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* User Experience */}
-                    <div>
-                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                        📱 User Experience
-                      </h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          PWA support (installable app)
-                        </div>
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Music theory assistance (scales, chords)
-                        </div>
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Real-time latency monitoring
-                        </div>
-                        <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                          Cross-browser compatibility
+                          Per-user Mixer with Individual effect chains
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border border-green-200 dark:border-green-800 mt-4">
+                  {/* <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border border-green-200 dark:border-green-800 mt-4">
                     <p className="text-sm text-green-700 dark:text-green-300">
-                      🎵 <strong>Fully functional collaborative music platform!</strong> Experience real-time jamming with friends. All core features are live and battle-tested.
+                      ✨ <strong>Ready for Live Action!</strong> Experience real-time jamming with friends. All core jamming features are live and battle-tested.
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
               {/* Phase 1 */}
               <div className="relative flex items-start mb-12">
-                <div className="flex-shrink-0 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center shadow-lg z-10">
-                  <span className="text-white font-bold text-lg">🎵</span>
+                <div className="flex-shrink-0 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-10">
+                  <span className="text-white font-bold text-sm">✓</span>
                 </div>
                 <div className="ml-6 flex-1">
                   <div className="flex items-center mb-2">
-                    <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400">
-                      Phase 1: Producer Room
+                    <h3 className="text-xl font-bold text-green-600 dark:text-green-400">
+                      Phase 1: Arrange Room (Collaborative DAW)
                     </h3>
-                    <span className="ml-3 px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs rounded-full font-medium">
-                      NEXT
+                    <span className="ml-3 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs rounded-full font-medium">
+                      LIVE
                     </span>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Enhanced production capabilities for serious music creation
+                    Professional-grade collaborative digital audio workstation for production & arrangement.
                   </p>
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                        🎛️ Production Features
+                        🎹 Production & DAW Engine
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                          Multitrack collaboration
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Multi-track Arrangement Grid with Region Management
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                          Async brainstorm sessions
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Advanced Ephemeral/Commit Sync Pattern
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                          Advanced recording capabilities
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Real-time Collaborative Project Locking (Mutex)
                         </div>
                         <div className="flex items-center">
-                          <span className="ml-4 w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                          Project management tools
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          High-quality Audio Export & Mixdown (.wav)
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Project Forking & Versioning System
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Intelligent Contributor Tracking & Credits
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                        🌐 Ecosystem & Security
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Session Persistence & Reconnection Windows
+                        </div>
+                        <div className="flex items-center">
+                          <span className="ml-4 w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                          Granular Project Privacy & Sharing Settings
                         </div>
                       </div>
                     </div>
@@ -430,7 +384,7 @@ export default function AboutPage() {
           </section>
 
           {/* Team Knowledge Requirements */}
-          {/* <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+          <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Team Knowledge Requirements
             </h2>
@@ -446,7 +400,7 @@ export default function AboutPage() {
               </li>
               <li>VST / Audio Unit API (future mobile app)</li>
             </ul>
-          </section> */}
+          </section>
 
           {/* Features */}
           {/* <section className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
@@ -634,7 +588,7 @@ export default function AboutPage() {
             </p>
             <div className="flex justify-center space-x-6 mt-6">
               <a
-                href="https://jam-band-fe.vercel.app/"
+                href={APP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"

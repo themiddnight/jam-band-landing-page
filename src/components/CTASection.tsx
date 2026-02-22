@@ -1,6 +1,5 @@
-'use client';
-
 import { motion } from 'framer-motion';
+import { APP_URL } from './constants/navigation';
 // import Image from 'next/image';
 
 export default function CTASection() {
@@ -9,7 +8,7 @@ export default function CTASection() {
       {/* Background Image Effect */}
       {/* <div className="absolute inset-0" style={{ opacity: 0.2 }}>
         <Image 
-          src="/assets/images/scale-pre-setup.webp" 
+          src="/images/scale-pre-setup.webp" 
           alt="" 
           fill
           className="object-cover transform scale-150 -translate-x-20 -translate-y-20 blur-md"
@@ -43,7 +42,7 @@ export default function CTASection() {
           viewport={{ once: true }}
         >
           <a 
-            href="https://jam-band-fe.vercel.app/" 
+            href={APP_URL} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="bg-gradient-to-r from-amber-500 to-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:from-amber-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 music-btn"

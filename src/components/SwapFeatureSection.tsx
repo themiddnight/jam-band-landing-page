@@ -12,7 +12,7 @@ const SwapFeatureSection = () => {
           Seamlessly swap instruments with band members and enjoy a synchronized step sequencer for a better brainstorming experience.
         </p>
         {/* <div className="flex justify-center">
-          <Image src="/assets/images/swap-feature.png" alt="Swap Feature" width={500} height={300} className="rounded-lg shadow-lg" />
+          <Image src="/images/swap-feature.png" alt="Swap Feature" width={500} height={300} className="rounded-lg shadow-lg" />
         </div> */}
       </div>
     </section>

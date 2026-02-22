@@ -4,34 +4,34 @@ import { motion } from 'framer-motion';
 
 const technicalRequirements = [
   {
-    icon: '🌐',
-    title: 'WebRTC Mesh Network',
-    description: 'For now (POC), we use WebRTC mesh for ultra-low latency, but this limits the number of participants in each session.',
-    status: 'Current Implementation'
+    icon: '⚡',
+    title: 'Socket.IO & WebRTC',
+    description: 'We use a hybrid approach of Socket.IO for state sync and WebRTC mesh for real-time voice, ensuring low latency and high reliability.',
+    status: 'High Performance'
   },
   {
-    icon: '🎤',
-    title: 'Voice Latency',
-    description: 'Voice latency depends on your browser and hardware. Technically, we cannot bypass the browser\'s audio processing pipeline.',
-    status: 'Browser Dependent'
+    icon: '🧬',
+    title: 'Ephemeral/Commit Sync',
+    description: 'Advanced sync strategy that broadcasts rapid changes instantly while committing final states to Redis, optimized for high-capacity rooms.',
+    status: 'Custom Engine'
+  },
+  {
+    icon: '🛠️',
+    title: 'Bun Runtime',
+    description: 'Built on Bun for ultra-fast performance, improved developer experience, and modern TypeScript support.',
+    status: 'Modern Stack'
   },
   {
     icon: '🌍',
-    title: 'Server Location',
-    description: 'Currently, our server is only located in Southeast Asia, so latency may vary depending on your geographical location.',
-    status: 'Southeast Asia'
-  },
-  {
-    icon: '📡',
-    title: 'Network Recommendations',
-    description: 'For the best experience, use a stable network connection like LAN cable instead of WiFi or cellular for stable and low latency.',
-    status: 'Recommended'
+    title: 'Low-Latency Infrastructure',
+    description: 'Currently optimized for Southeast Asia with remote DB and Redis architecture on Railway.',
+    status: 'Regional Optimized'
   },
   {
     icon: '🔌',
-    title: 'MIDI & Browser Support',
-    description: 'Chromium-based browsers (Chrome, Edge, Brave) are recommended for MIDI device connection and full support of all synthesizer instruments. Some instruments may not work properly on WebKit browsers.',
-    status: 'Chromium Recommended'
+    title: 'Full MIDI Support',
+    description: 'Connect your physical MIDI controllers directly via the Web MIDI API. Optimized for Chromium-based browsers.',
+    status: 'Pro Ready'
   }
 ];
 
@@ -106,19 +106,19 @@ export default function TechnicalRequirementsSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600 dark:text-gray-300">
             <div className="flex items-center space-x-2">
               <span className="text-blue-500">•</span>
-              <span>Close unnecessary browser tabs and applications</span>
+              <span>Use a Chromium-based browser (Chrome, Edge, Brave) for full MIDI and Audio support</span>
             </div>
             <div className="flex items-center space-x-2">
               <span className="text-blue-500">•</span>
-              <span>Use headphones to avoid audio feedback</span>
+              <span>Connect via Ethernet/LAN for the most stable real-time synchronization</span>
             </div>
             <div className="flex items-center space-x-2">
               <span className="text-blue-500">•</span>
-              <span>Ensure your microphone permissions are enabled</span>
+              <span>Use wired headphones to minimize audio latency and prevent feedback loops</span>
             </div>
             <div className="flex items-center space-x-2">
               <span className="text-blue-500">•</span>
-              <span>Test your audio setup before joining a session</span>
+              <span>Start with a &quot;Perform Room&quot; for quick jamming, or &quot;Arrange Room&quot; for production</span>
             </div>
           </div>
         </motion.div>

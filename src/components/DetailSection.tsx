@@ -7,28 +7,28 @@ const detailCards = [
   {
     title: 'Guitar Interface',
     description: 'Advanced chord triggering with customizable voicings and root note selection for perfect harmony.',
-    image: '/assets/images/guitar-chord-trigger.webp',
+    image: '/images/guitar-chord-trigger.webp',
     tags: ['Chords', 'Voicing'],
     gradient: 'from-purple-500/10 to-blue-500/10'
   },
   {
     title: 'Keyboard Layout',
     description: 'QWERTY-based musical mapping with intuitive key combinations for seamless performance.',
-    image: '/assets/images/keyboard-chord-trigger.webp',
+    image: '/images/keyboard-chord-trigger.webp',
     tags: ['QWERTY', 'Mapping'],
     gradient: 'from-blue-500/10 to-cyan-500/10'
   },
   {
     title: 'Drum Machine',
     description: 'Color-coded pads with customizable sounds and responsive touch controls for dynamic beats.',
-    image: '/assets/images/drumpad.webp',
+    image: '/images/drumpad.webp',
     tags: ['Pads', 'Touch'],
     gradient: 'from-green-500/10 to-emerald-500/10'
   },
   {
     title: 'Step Sequencer',
     description: '1-32 variable step grid with pattern creation and real-time editing for complex musical arrangements.',
-    image: '/assets/images/sequencer.webp',
+    image: '/images/sequencer.webp',
     tags: ['Variable Steps', 'Grid'],
     gradient: 'from-indigo-500/10 to-purple-500/10'
   }
@@ -40,7 +40,7 @@ export default function DetailSection() {
       {/* Background Image Effect */}
       <div className="absolute inset-0" style={{ opacity: 0.1 }}>
         <Image 
-          src="/assets/images/synth-sequencer.webp" 
+          src="/images/synth-sequencer.webp" 
           alt="" 
           fill
           className="object-cover transform scale-150 -translate-x-24 -translate-y-24 blur-md"

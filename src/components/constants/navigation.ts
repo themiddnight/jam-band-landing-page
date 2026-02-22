@@ -1,3 +1,6 @@
+// Application URL
+export const APP_URL = "https://collab-stg.up.railway.app/";
+
 // Section items that will be in the dropdown
 export const SECTION_MENU_ITEMS = [
   {
@@ -5,12 +8,16 @@ export const SECTION_MENU_ITEMS = [
     href: '/#features'
   },
   {
-    label: 'Instruments',
-    href: '/#instruments'
+    label: 'Experience',
+    href: '/#experience'
   },
   {
-    label: 'Perfect For',
-    href: '/#perfect-for'
+    label: 'Music Theory',
+    href: '/#music-theory'
+  },
+  {
+    label: 'Instruments',
+    href: '/#instruments'
   },
   {
     label: 'Technical Requirements',

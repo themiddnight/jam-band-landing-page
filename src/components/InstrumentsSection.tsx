@@ -9,7 +9,7 @@ export default function InstrumentsSection() {
       {/* Background Image Effect */}
       <div className="absolute inset-0" style={{ opacity: 0.1 }}>
         <Image 
-          src="/assets/images/various-instruments-selection.webp" 
+          src="/images/various-instruments-selection.webp" 
           alt="" 
           fill
           className="object-cover transform scale-150 -translate-x-16 -translate-y-16 blur-md"
@@ -97,7 +97,7 @@ export default function InstrumentsSection() {
               viewport={{ once: true }}
             >
               <Image 
-                src="/assets/images/guitar-chord-trigger.webp" 
+                src="/images/guitar-chord-trigger.webp" 
                 alt="Guitar Chord Trigger Interface" 
                 width={600}
                 height={400}
@@ -118,7 +118,7 @@ export default function InstrumentsSection() {
               viewport={{ once: true }}
             >
               <Image 
-                src="/assets/images/keyboard-chord-trigger.webp" 
+                src="/images/keyboard-chord-trigger.webp" 
                 alt="Keyboard Chord Trigger Interface" 
                 width={600}
                 height={400}
@@ -209,7 +209,7 @@ export default function InstrumentsSection() {
               viewport={{ once: true }}
             >
               <Image 
-                src="/assets/images/drumpad.webp" 
+                src="/images/drumpad.webp" 
                 alt="Drumpad Interface" 
                 width={600}
                 height={400}
@@ -230,7 +230,7 @@ export default function InstrumentsSection() {
               viewport={{ once: true }}
             >
               <Image 
-                src="/assets/images/sequencer.webp" 
+                src="/images/sequencer.webp" 
                 alt="Step Sequencer Interface" 
                 width={600}
                 height={400}
@@ -285,7 +285,7 @@ export default function InstrumentsSection() {
         >
           <div className="relative group">
             <Image 
-              src="/assets/images/drumpad.webp" 
+              src="/images/drumpad.webp" 
               alt="Drumpad Interface" 
               width={400}
               height={300}
@@ -296,7 +296,7 @@ export default function InstrumentsSection() {
           
           <div className="relative group">
             <Image 
-              src="/assets/images/scale-pre-setup.webp" 
+              src="/images/scale-pre-setup.webp" 
               alt="Scale Setup" 
               width={400}
               height={300}
@@ -307,7 +307,7 @@ export default function InstrumentsSection() {
           
           <div className="relative group">
             <Image 
-              src="/assets/images/tools-section.webp" 
+              src="/images/tools-section.webp" 
               alt="Tools Section" 
               width={400}
               height={300}

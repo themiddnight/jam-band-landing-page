@@ -87,66 +87,55 @@ export default function TopSectionGuide() {
           </div>
         </div>
 
-        {/* Instrument Controls */}
+        {/* Instrument & Room Controls */}
         <div className="mb-8">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <Music className="w-6 h-6 text-purple-600" />
-            Instrument Controls
+            Room & Recording Controls
           </h3>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
             <div>
               <div className="relative rounded-xl overflow-hidden shadow-lg mb-3">
                 <Image
                   src="/images/instructions/1-4-instrument-live.png"
-                  alt="Live Instrument Mode"
+                  alt="Perform Room Controls"
                   width={600}
                   height={400}
                   className="w-full h-auto"
                 />
               </div>
               <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                Live mode for real-time performance and collaboration
+                Perform Room: Focused on real-time jamming
               </p>
             </div>
             
             <div>
-              <div className="relative rounded-xl overflow-hidden shadow-lg mb-3">
-                <Image
-                  src="/images/instructions/1-5-instrument-practice.png"
-                  alt="Practice Instrument Mode"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                />
+              <div className="relative rounded-xl overflow-hidden shadow-lg mb-3 bg-gray-100 dark:bg-gray-800 flex items-center justify-center aspect-[3/2]">
+                <p className="text-xs text-gray-400">[Screenshot: Arrange Room Toolbar]</p>
               </div>
               <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                Practice mode for solo playing and learning
+                Arrange Room: Focused on production & recording
               </p>
             </div>
           </div>
 
-          <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-700 rounded-xl p-6">
-            <h4 className="font-semibold text-purple-800 dark:text-purple-300 mb-3">Instrument Modes:</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-              <div>
-                <h5 className="font-medium text-purple-700 dark:text-purple-300 mb-2">🎵 Live Mode</h5>
-                <ul className="space-y-1 text-purple-600 dark:text-purple-400">
-                  <li>• Real-time collaboration with other players</li>
-                  <li>• Audio sent to all room members</li>
-                  <li>• Synchronized with room metronome</li>
-                  <li>• Perfect for jamming sessions</li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-medium text-purple-700 dark:text-purple-300 mb-2">🏠 Practice Mode</h5>
-                <ul className="space-y-1 text-purple-600 dark:text-purple-400">
-                  <li>• Solo practice without others hearing</li>
-                  <li>• No audio sent to room members</li>
-                  <li>• Great for learning and experimentation</li>
-                  <li>• Can still hear others playing</li>
-                </ul>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-700 rounded-xl p-6">
+              <h4 className="font-semibold text-purple-800 dark:text-purple-300 mb-3">Jamming (Perform):</h4>
+              <ul className="space-y-2 text-sm text-purple-700 dark:text-purple-300">
+                <li>• <strong>Live/Practice Toggle:</strong> Control who hears your performance.</li>
+                <li>• <strong>Swap Instrument:</strong> Instantly switch roles with other members.</li>
+                <li>• <strong>Voice Priority:</strong> Prioritize chat for better coordination.</li>
+              </ul>
+            </div>
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-xl p-6">
+              <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-3">Production (Arrange):</h4>
+              <ul className="space-y-2 text-sm text-blue-700 dark:text-blue-300">
+                <li>• <strong>Record Engine:</strong> Captures audio regions with high fidelity.</li>
+                <li>• <strong>Split/Trim:</strong> Basic editing tools for audio regions.</li>
+                <li>• <strong>Mixdown:</strong> Export your final arrangement to .WAV.</li>
+              </ul>
             </div>
           </div>
         </div>
